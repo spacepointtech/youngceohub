@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,6 +9,20 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+}
+.font-hammersmith-one {
+  font-family: 'Hammersmith One', sans-serif;
+}
+.bg-gray-700 {
+  background-color: #4a4a4a;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.rounded {
+  border-radius: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
