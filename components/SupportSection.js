@@ -5,7 +5,11 @@ export default function SupportSection() {
     <div className="min-h-screen bg-black text-white py-20 px-4 md:px-0 font-hammersmith-one">
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto items-center">
         <div className="flex justify-center md:justify-start">
-          <img src="/images/support-illustration.svg" alt="Support Illustration" className="w-80 h-auto" />
+          <img 
+            src="/images/Lo-fi concept-amico.svg" 
+            alt="Support Illustration" 
+            className="w-120 h-auto transform hover:scale-125 transition-all duration-500 ease-in-out animate-fade-in" 
+          />
         </div>
         <div className="text-center md:text-left">
           <h2 className="text-5xl font-bold">

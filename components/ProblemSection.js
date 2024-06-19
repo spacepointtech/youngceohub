@@ -50,7 +50,7 @@ export default function ProblemSection() {
         <img src="/images/youtube.svg" alt="YouTube" className="w-14 h-14" />
       </div>
       <p className="italic mb-8 mt-4 text-opacity-50">MANY MORE</p>
-      <button className="bg-gray-600 text-white px-6 py-3 rounded">Distribute Your Music Worldwide</button>
+      <button className="bg-gray-600 text-white px-8 py-5 text-lg rounded">Distribute Your Music Worldwide</button>
     </div>
   );
 }

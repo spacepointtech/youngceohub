@@ -67,6 +67,56 @@ body {
   padding-right: 1rem;
 }
 
+/* SupportSection */
+
+/* globals.css */
+
+.font-hammersmith-one {
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-gray-400 {
+  color: rgba(156, 163, 175, 0.85);
+}
+
+.hover\:text-gray-200:hover {
+  color: #e5e7eb;
+}
+
+.transition {
+  transition: all 0.3s ease;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .md\:px-0 {
   @media (min-width: 768px) {
     padding-left: 0;
@@ -74,8 +124,8 @@ body {
   }
 }
 
-.text-lg {
-  font-size: 1.125rem;
+.text-sm {
+  font-size: 0.875rem;
 }
 
 .text-2xl {
@@ -123,20 +173,7 @@ body {
   }
 }
 
-/* globals.css */
-
-.text-gray-400 {
-  color: rgba(156, 163, 175, 0.85); /* Gray color with adjusted opacity */
+.text-center {
+  text-align: center;
 }
 
-.hover\:text-gray-200:hover {
-  color: #e5e7eb; /* Lighter gray color on hover */
-}
-
-.transition {
-  transition: all 0.3s ease;
-}
-
-.duration-300 {
-  transition-duration: 300ms;
-}
