@@ -10,20 +10,6 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-.font-hammersmith-one {
-  font-family: 'Hammersmith One', sans-serif;
-}
-.bg-gray-700 {
-  background-color: #4a4a4a;
-}
-
-.p-4 {
-  padding: 1rem;
-}
-
-.rounded {
-  border-radius: 0.5rem;
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -47,4 +33,110 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.font-hammersmith-one {
+  font-family: 'Hammersmith One', sans-serif;
+}
+.bg-gray-700 {
+  background-color: #4a4a4a;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+.bg-black {
+  background-color: #000;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.md\:px-0 {
+  @media (min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.md\:grid-cols-2 {
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* globals.css */
+
+.text-gray-400 {
+  color: rgba(156, 163, 175, 0.85); /* Gray color with adjusted opacity */
+}
+
+.hover\:text-gray-200:hover {
+  color: #e5e7eb; /* Lighter gray color on hover */
+}
+
+.transition {
+  transition: all 0.3s ease;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
 }
