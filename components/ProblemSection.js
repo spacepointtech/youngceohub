@@ -9,7 +9,7 @@ export default function ProblemSection() {
       <p className="text-xl mb-4">
         While music streaming has been popular these days,
         <br />
-        it doesn’t really highlight up and upcoming musicians and indie artists.
+        it doesn&apos;t really highlight up and upcoming musicians and indie artists.
       </p>
       <p className="text-3xl font-semibold mb-8">
         "No Borders, No Limits:
