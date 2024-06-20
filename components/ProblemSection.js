@@ -12,9 +12,9 @@ export default function ProblemSection() {
         it doesn&apos;t really highlight up and upcoming musicians and indie artists.
       </p>
       <p className="text-3xl font-semibold mb-8">
-        "No Borders, No Limits:
+        No Borders, No Limits:
         <br />
-        Distribute your music worldwide"
+        Distribute your music worldwide
       </p>
       <div className="flex justify-center space-x-6 mb-8 mt-4">
         <div className="w-14 h-14">
