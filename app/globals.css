@@ -67,6 +67,37 @@ body {
   padding-right: 1rem;
 }
 
+/* Third Section */
+.image-container {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+.image-container:hover {
+  transform: scale(1.05);
+}
+
+/* Style for the images to fit properly */
+
+.image-style {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-gray-700 {
+  transition: transform 0.3s ease-in-out;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-gray-700:hover {
+  transform: scale(1.05);
+}
+
 /* SupportSection */
 
 /* globals.css */
@@ -177,3 +208,82 @@ body {
   text-align: center;
 }
 
+/* Pricing */
+
+.plan-box {
+  @apply bg-white text-black rounded-lg p-6 text-center transform transition-transform duration-300 ease-in-out shadow-lg hover:shadow-xl;
+  transition: transform 0.3s ease-in-out;
+}
+
+.plan-box:hover {
+  transform: scale(1.10);
+}
+
+.plan-button {
+  @apply px-6 py-2 border border-black text-black rounded transition-colors duration-300 ease-in-out;
+}
+
+.plan-button:hover {
+  @apply bg-black text-white;
+}
+
+
+/* Footer section */
+
+
+/* Go to Top Button */
+.go-to-top {
+  @apply px-6 py-3 border border-white text-white rounded transition-colors duration-300 ease-in-out;
+}
+
+.go-to-top:hover {
+  @apply bg-white text-black;
+}
+
+/* Subscribe Button */
+.subscribe-button {
+  @apply px-6 py-2 border border-gray-400 text-white rounded transition-colors duration-300 ease-in-out;
+}
+
+.subscribe-button:hover {
+  @apply bg-white text-black;
+}
+
+.subscribe-button[disabled] {
+  @apply bg-gray-700 cursor-not-allowed;
+}
+
+/* Footer Links */
+.footer-link {
+  @apply text-gray-400 hover:text-white transition duration-300 ease-in-out;
+}
+
+/* Social Media Icons */
+.social-link {
+  @apply inline-block mx-2 transition-transform duration-300 ease-in-out;
+}
+
+.social-link:hover {
+  transform: scale(1.2);
+}
+
+/* Footer Bottom Links */
+.footer-bottom-link {
+  @apply text-gray-400 hover:text-white transition duration-300 ease-in-out;
+}
+
+/* Language Dropdown */
+.language-dropdown {
+  @apply appearance-none bg-transparent border border-gray-400 rounded pl-4 pr-8 py-2 text-white;
+  cursor: pointer;
+}
+
+.language-dropdown option {
+  @apply text-black;
+}
+
+.language-dropdown ~ .fa-globe {
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+}
