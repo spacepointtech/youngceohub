@@ -67,6 +67,70 @@ body {
   padding-right: 1rem;
 }
 
+/* Problem Section */
+
+/* globals.css */
+/* globals.css */
+
+/* Basic positioning and effects */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.transform {
+  transform: scale(1);
+}
+
+.transition-transform {
+  transition: transform 0.3s ease-in-out;
+}
+
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}
+
+.hover\\:scale-125:hover {
+  transform: scale(1.25);
+}
+
+.hover\\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.opacity-95 {
+  opacity: 0.95;
+}
+
+.bg-gray-900 {
+  background-color: #1a1a1a; /* Darker background color */
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.05); /* Adds a shadow to the tooltip */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+}
+
+
 /* Third Section */
 .image-container {
   width: 300px;
