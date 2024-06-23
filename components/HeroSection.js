@@ -1,5 +1,6 @@
-'use client'; // for client side rendering
+// HeroSection.js
 
+'use client'; // for client side rendering
 import React from 'react';
 import Image from 'next/image';
 

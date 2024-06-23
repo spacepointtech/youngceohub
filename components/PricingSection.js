@@ -1,5 +1,6 @@
-'use client'; // for client side rendering
+// PricingSection.js
 
+'use client'; // for client side rendering
 import React from 'react';
 
 export default function PricingSection() {

@@ -1,4 +1,5 @@
 /* globals.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
@@ -76,18 +77,6 @@ body {
   border-radius: 0.5rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -96,6 +85,7 @@ body {
 
 .font-hammersmith-one {
   font-family: 'Hammersmith One', sans-serif;
+  font-family: 'rubik-glitch';
 }
 .bg-gray-700 {
   background-color: #4a4a4a;
