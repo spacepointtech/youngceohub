@@ -24,7 +24,7 @@ export default function Navbar() {
             </button>
             {/* Login/Signin Buttons on Small Screens */}
             <button className="bg-gray-700 px-2 py-1 rounded">Log In</button>
-            <button className="bg-gray-700 px-2 py-1 rounded">Sign In</button>
+            <button className="bg-gray-700 px-2 py-1 rounded">Sign Up</button>
           </div>
 
           {/* Navigation Links */}

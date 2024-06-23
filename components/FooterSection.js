@@ -228,6 +228,7 @@ export default function FooterSection() {
             className="language-dropdown"
           >
             <option value="English">English</option>
+            
             {/* Add more languages here */}
           </select>
         </div>
@@ -249,10 +250,10 @@ export default function FooterSection() {
         
         {/* Social Media Icons */}
         <div className="flex justify-center space-x-4 mt-4">
-          <a href="https://linkedin.com" target="_blank" className="social-link">
+          <a href="https://www.linkedin.com/company/young-ceo-entertainment/" target="_blank" className="social-link">
             <FaLinkedin size={20} />
           </a>
-          <a href="https://instagram.com" target="_blank" className="social-link">
+          <a href="" target="_blank" className="social-link">
             <FaInstagram size={20} />
           </a>
           <a
