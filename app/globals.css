@@ -1,3 +1,4 @@
+/* globals.css */
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
@@ -27,6 +28,66 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+/* globals.css */
+
+
+.bg-black {
+  background-color: #000;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.hover\\:text-gray-400:hover {
+  color: #cbd5e0;
+}
+
+.bg-opacity-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Adjustments for HeroSection Component */
+.h-screen {
+  height: 100vh;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.font-rubik-glitch {
+  font-family: 'Rubik Glitch', sans-serif;
+}
+
+.text-7xl {
+  font-size: 5rem; /* Adjust as needed */
+}
+
+.text-3xl {
+  font-size: 1.875rem; /* Adjust as needed */
+}
+
+.text-white {
+  color: #fff;
+}
+
+.mb-4 {
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
+@media (min-width: 640px) {
+  .sm:flex {
+    display: flex;
+  }
+  .sm:hidden {
+    display: none;
+  }
 }
 
 @layer utilities {
@@ -68,9 +129,6 @@ body {
 }
 
 /* Problem Section */
-
-/* globals.css */
-/* globals.css */
 
 /* Basic positioning and effects */
 .relative {
@@ -130,10 +188,10 @@ a:hover {
   color: inherit;
 }
 
-
 /* Third Section */
 .image-container {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 400px;
   overflow: hidden;
   position: relative;
@@ -164,7 +222,6 @@ a:hover {
 
 /* SupportSection */
 
-/* globals.css */
 
 .font-hammersmith-one {
   font-family: 'Hammersmith One', sans-serif;
@@ -305,6 +362,7 @@ a:hover {
 }
 
 /* Subscribe Button */
+
 .subscribe-button {
   @apply px-6 py-2 border border-gray-400 text-white rounded transition-colors duration-300 ease-in-out;
 }
