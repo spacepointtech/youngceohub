@@ -5,6 +5,7 @@ import ThirdSection from '@/components/ThirdSection';
 import SupportSection from '@/components/SupportSection';
 import PricingSection from '@/components/PricingSection';
 import FooterSection from '@/components/FooterSection';
+import LoginPage from '@/components/LoginPage';
 export default function HomePage() {
   return (
     <>
@@ -17,3 +18,10 @@ export default function HomePage() {
     </>
   );
 }
+
+export function Login(){
+  return <LoginPage />
+}
+
+
+
