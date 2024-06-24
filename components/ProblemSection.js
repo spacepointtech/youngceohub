@@ -1,7 +1,6 @@
 // ProblemSection.js
-
 'use client'; // for client side rendering
-
+import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -50,9 +49,9 @@ export default function ProblemSection() {
 
       <p className="italic mb-8 mt-4 text-opacity-20">MANY MORE...</p>
     
-      <button className="bg-gray-600 text-white px-8 py-5 text-lg rounded transform transition-transform duration-300 hover:scale-105 hover:bg-gray-800">
+     <Link href="/signup"><button className="bg-gray-600 text-white px-8 py-5 text-lg rounded transform transition-transform duration-300 hover:scale-105 hover:bg-gray-800">
         Distribute Your Music Worldwide
-      </button> 
+      </button> </Link> 
     </div>
   );
 }
