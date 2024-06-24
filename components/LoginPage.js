@@ -24,7 +24,7 @@ export default function LoginPage() {
             <input type="email" placeholder="Email" className="login-input" required />
             <input type="password" placeholder="Password" className="login-input" required />
             <div className="login-actions">
-              <Link href="/forgot-password" className="forgot-password-link">Forget Password?</Link>
+              <Link href="/reset" className="forgot-password-link">Forget Password?</Link>
             </div>
             <button type="submit" className="login-button">Get into your YCE HUB</button>
             <button type="button" className="google-login-button">
