@@ -15,7 +15,7 @@ export default function SignupPage() {
           </Link>
         </div>
         <div className="login-form-container">
-          <h2 className="login-title">Become Young CEO!</h2>
+          <h2 className="login-title">Become The Young CEO!</h2>
           <p className="login-subtitle">
             Already Young CEO?{' '}
             <Link href="/login" className="signup-link">Log In</Link>
