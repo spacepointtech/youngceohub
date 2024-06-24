@@ -11,7 +11,6 @@ export default function SupportSection() {
             <Image 
               src="/images/Lo-fi concept-amico.svg" 
               alt="Support Illustration" 
-              layout="intrinsic" 
               width={600}
               height={600}
             />
