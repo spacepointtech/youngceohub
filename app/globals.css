@@ -21,7 +21,18 @@
   }
 }
 
-body {
+/* Define root variables for color themes */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+:root.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+}
+
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -29,12 +40,25 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-rgb));
+  transition: color 0.3s, background-color 0.3s;
 }
 
 /* Navbar specific styles */
-
 .bg-black {
   background-color: #000;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.text-black {
+  color: #000;
 }
 
 .text-white {
@@ -45,12 +69,7 @@ body {
   color: #cbd5e0;
 }
 
-.bg-opacity-50 {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 /* Additional styles for toggle menu box */
-
 .absolute {
   position: absolute;
 }
@@ -77,33 +96,16 @@ body {
   border-radius: 0.5rem;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 .font-hammersmith-one {
   font-family: 'Hammersmith One', sans-serif;
-  font-family: 'rubik-glitch';
 }
+
 .bg-gray-700 {
   background-color: #4a4a4a;
 }
 
 .p-4 {
   padding: 1rem;
-}
-
-.rounded {
-  border-radius: 0.5rem;
-}
-.bg-black {
-  background-color: #000;
-}
-
-.text-white {
-  color: #fff;
 }
 
 .py-20 {
@@ -114,6 +116,27 @@ body {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+/* Ensure smooth transitions between modes */
+.transition-colors {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Icon and Button Colors */
+.bg-gray-700 {
+  background-color: #4a4a4a;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.font-hammersmith-one {
+  font-family: 'Hammersmith One', sans-serif;
+  font-family: 'rubik-glitch';
 }
 
 /* Problem Section */
@@ -319,9 +342,9 @@ a:hover {
 
 /* Pricing */
 
+/* Pricing */
 .plan-box {
-  @apply bg-white text-black rounded-lg p-6 text-center transform transition-transform duration-300 ease-in-out shadow-lg hover:shadow-xl;
-  transition: transform 0.3s ease-in-out;
+  @apply bg-white text-black rounded-lg p-6 text-center flex flex-col justify-between transform transition-transform duration-300 ease-in-out shadow-lg hover:shadow-xl;
 }
 
 .plan-box:hover {
@@ -329,12 +352,13 @@ a:hover {
 }
 
 .plan-button {
-  @apply px-6 py-2 border border-black text-black rounded transition-colors duration-300 ease-in-out;
+  @apply px-4 py-1 border border-black text-black rounded transition-colors duration-300 ease-in-out mt-auto;
 }
 
 .plan-button:hover {
   @apply bg-black text-white;
 }
+
 
 
 /* Footer section */
