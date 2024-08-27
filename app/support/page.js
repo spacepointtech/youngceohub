@@ -1,8 +1,5 @@
-
-export default function support() {
-  return (
-    <div>
-        <h1>SUPPORT</h1>
-    </div>
-  );
+import '@/app/style.css'
+import SupportComp from '@/components/SupportPage'
+export default function SupportHub() {
+  return <SupportComp />;
 }
