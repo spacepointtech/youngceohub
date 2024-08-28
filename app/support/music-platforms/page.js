@@ -1,9 +1,8 @@
 'use client';
-import '@/app/style.css'
 import React, { useState } from 'react';
 import { FaSearch, FaChevronRight, FaChevronDown, FaEdit } from 'react-icons/fa';
 
-const FaqComponent = () => {
+const platformSupport = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -127,4 +126,4 @@ const faqItems = [
   { question: 'How does YCE Music Mastering work?', answer: 'Our mastering service enhances your tracks with professional sound quality. Upload your tracks, and our team will handle the rest.' },
 ];
 
-export default FaqComponent;
+export default platformSupport;

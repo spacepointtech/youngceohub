@@ -3,7 +3,7 @@ import '@/app/style.css';
 import React, { useState } from 'react';
 import { FaSearch, FaChevronRight, FaChevronDown, FaCheck } from 'react-icons/fa';
 
-const UploadComponent = () => {
+const ApplicationSupportComponent = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -108,4 +108,4 @@ const faqItems = [
   { question: 'Does YCE Music offer a free trial?', answer: '' },
 ];
 
-export default UploadComponent;
+export default ApplicationSupportComponent;
