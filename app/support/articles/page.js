@@ -91,7 +91,7 @@ const ArticlesReleasesComponent = () => {
 
 // Example FAQ items
 const faqItems = [
-  { question: 'What is Young Ceo Entertainment', answer: 'Young CEO Entertainment is a platform for local street artists&rsquo; rappers, musicians, and beat producers to empower them to become their own CEOs and bring them to major audio streaming platforms like Spotify, AppleMusic, JioSaavn etc. Popular streaming platforms like these do not work with artists directly, they only work with distribution companies. That is where we come into the picture. We enable artists to leave the hassles of distribution to us and focus more on their art & creativity!' },
+  { question: 'What is Young Ceo Entertainment', answer: 'Young CEO Entertainment is a platform for local street artists, rappers, musicians, and beat producers to empower them to become their own CEOs and bring them to major audio streaming platforms like Spotify, AppleMusic, JioSaavn etc. Popular streaming platforms like these do not work with artists directly, they only work with distribution companies. That is where we come into the picture. We enable artists to leave the hassles of distribution to us and focus more on their art & creativity!' },
   { 
     question: 'How much does music distribution cost with Young CEO Entertainment?', 
     answer: 'The cost for music distribution with Young CEO Entertainment depends on the plan you choose. We offer various plans to suit different needs, ranging from single-track releases to full album distributions. Please visit our pricing page for detailed information.' 
