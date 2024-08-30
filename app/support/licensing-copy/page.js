@@ -1,10 +1,9 @@
 'use client';
-import '@/app/style.css'
-import React, { useState } from 'react';
 import Image from 'next/image';
-import { FaSearch, FaChevronRight, FaChevronDown, FaEdit } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaSearch, FaChevronRight, FaChevronDown, FaEdit, FaClipboard } from 'react-icons/fa';
 
-const EditSupport = () => {
+const LicenseSupport = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -52,8 +51,8 @@ const EditSupport = () => {
       <div className="container mx-auto px-6 pb-16">
         <div className={`faq-header flex items-center justify-between mb-6 ${openIndex !== null ? 'blur-md' : ''}`}>
           <div className="flex flex-col">
-            <FaEdit className="text-4xl mb-4 opacity-30"/>
-            <h2 className="text-2xl font-semibold">Making Edits</h2>
+            <FaClipboard className="text-4xl mb-4 opacity-30"/>
+            <h2 className="text-2xl font-semibold">Licensing, Copyright & Metadata</h2>
           </div>
           <div className="faq-logo">
             <Image src="/images/logo.png" alt="Young CEO Entertainment" height={200} width={200} />
@@ -62,7 +61,7 @@ const EditSupport = () => {
         <p className={`text-sm opacity-75 mb-6 ${openIndex !== null ? 'blur-md' : ''}`}>Answers to questions we are asked most often.</p>
         <p className={`text-sm opacity-50 mb-12 ${openIndex !== null ? 'blur-md' : ''}`}>{filteredFaqItems.length} Articles</p>
 
-        
+     
         <div className="faq-container bg-[#484848] bg-opacity-[24%] border border-[#A6A6A6] rounded-lg p-6">
           <div className="faq-list">
             {filteredFaqItems.length > 0 ? (
@@ -89,46 +88,49 @@ const EditSupport = () => {
   );
 };
 
-
 const faqItems = [
   {
-    question: 'What do I need to start releasing music?',
+    question: 'Do I need a license to release my music?',
+    answer: 'Yes, you need to ensure that you have the appropriate licenses to release your music. This includes mechanical licenses for cover songs, synchronization licenses if your music will be used in videos, and distribution licenses for getting your music on platforms like Spotify and Apple Music.'
+  },
+  {
+    question: 'What is a UPC/EAN code?',
+    answer: 'A UPC (Universal Product Code) or EAN (European Article Number) is a barcode that helps digital platforms identify your release. It’s required for distributing your music. YCE can provide UPC codes for your releases if you don’t have one.'
+  },
+  {
+    question: 'Can I release cover songs, remixes, or songs using samples?',
+    answer: 'Yes, you can release cover songs, remixes, or songs using samples, but you must have the necessary rights and permissions. For cover songs, you’ll need a mechanical license. For remixes and samples, you must get approval from the original creators or rights holders.'
+  },
+  {
+    question: 'Will YCE promote my music?',
+    answer: 'While YCE primarily focuses on music distribution, we also offer promotional services at an additional cost. These services include playlist pitching, social media promotions, and press coverage. Contact us for more information about our promotional packages.'
+  },
+  {
+    question: 'Does YCE provide ISRC & UPC codes?',
+    answer: 'Yes, YCE provides both ISRC (International Standard Recording Code) and UPC codes for your releases. An ISRC code uniquely identifies your track and is essential for tracking sales and streams. A UPC code is required for your release as a whole.'
+  },
+  {
+    question: 'Can I work with other distributors & record labels at the same time as YCE?',
+    answer: 'Yes, you can work with other distributors and record labels simultaneously, but it’s important to ensure that your contracts do not conflict. Some distributors and labels may have exclusivity clauses, so be sure to review your agreements carefully.'
+  },
+  {
+    question: 'What is an ISRC code?',
+    answer: 'An ISRC (International Standard Recording Code) is a unique identifier for a specific recording of a song. It is used to track sales, streams, and radio plays. YCE provides ISRC codes if you don’t already have them for your tracks.'
+  },
+  {
+    question: 'Can I use existing ISRC or UPC codes?',
+    answer: 'Yes, you can use existing ISRC or UPC codes if you already have them. If you’re re-releasing music that has been previously distributed, using the same codes will help maintain consistency in tracking your music’s performance.'
+  },
+  {
+    question: 'Where can I see my contract with Young Ceo Entertainment?',
     answer: (
       <>
-        Just{' '}
-        <a href="/signup" className="text-blue-500">
-          Become Young Ceo
-        </a>{' '}
-        using YCE Hub with your email address 🚀
-        <br />
-        <br />
-        Select the plans that are suitable for you 🎶
-        <br />
-        <br />
-        Choose the one that&apos;s right for you and follow the step-by-step create release form process.
+        You can view your contract and all the associated terms and conditions by visiting the 
+        <a href="/terms-and-conditions" className="text-blue-500"> Terms & Conditions </a> 
+        page. It's important to review this document to understand your rights and obligations as a Young Ceo.
       </>
     ),
   },
-  {
-    question: "Can I edit my release after it's been completed but still in review?",
-    answer: "Yes, you can make edits to your release while it is still under review. However, once the release is live on stores, further changes cannot be made."
-  },
-  {
-    question: "If I remove a release from stores, edit and re-upload it, will the same Spotify or iTunes links work?",
-    answer: "No, removing and re-uploading a release will result in new links being generated. The original Spotify or iTunes links will no longer be valid."
-  },
-  {
-    question: "Can I add more stores to an existing release?",
-    answer: "Yes, you can add more stores to an existing release by editing the distribution options in your YCE account and selecting additional platforms."
-  },
-  {
-    question: "Can I change my release date?",
-    answer: "Yes, you can change your release date before the release has gone live. Simply update the release details in your YCE account."
-  },
-  {
-    question: "How do I change my artist or band name?",
-    answer: "To change your artist or band name, please contact YCE support. Keep in mind that this may affect your existing releases, and the change could take some time to reflect on all platforms."
-  },
 ];
 
-export default EditSupport;
+export default LicenseSupport;

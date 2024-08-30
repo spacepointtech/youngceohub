@@ -1,10 +1,10 @@
 'use client';
 import '@/app/style.css'
-import React, { useState } from 'react';
 import Image from 'next/image';
-import { FaSearch, FaChevronRight, FaChevronDown, FaEdit } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaSearch, FaChevronRight, FaChevronDown, FaBook } from 'react-icons/fa';
 
-const EditSupport = () => {
+const PublishingSupport = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -52,14 +52,14 @@ const EditSupport = () => {
       <div className="container mx-auto px-6 pb-16">
         <div className={`faq-header flex items-center justify-between mb-6 ${openIndex !== null ? 'blur-md' : ''}`}>
           <div className="flex flex-col">
-            <FaEdit className="text-4xl mb-4 opacity-30"/>
-            <h2 className="text-2xl font-semibold">Making Edits</h2>
+            <FaBook className="text-4xl mb-4 opacity-30"/>
+            <h2 className="text-2xl font-semibold">Music Publishing</h2>
           </div>
           <div className="faq-logo">
             <Image src="/images/logo.png" alt="Young CEO Entertainment" height={200} width={200} />
           </div>
         </div>
-        <p className={`text-sm opacity-75 mb-6 ${openIndex !== null ? 'blur-md' : ''}`}>Answers to questions we are asked most often.</p>
+        <p className={`text-sm opacity-75 mb-6 ${openIndex !== null ? 'blur-md' : ''}`}>The ins and outs of Music Publishing</p>
         <p className={`text-sm opacity-50 mb-12 ${openIndex !== null ? 'blur-md' : ''}`}>{filteredFaqItems.length} Articles</p>
 
         
@@ -92,43 +92,37 @@ const EditSupport = () => {
 
 const faqItems = [
   {
-    question: 'What do I need to start releasing music?',
+    question: 'How do I sign up for Young Ceo Entertainment Music Publishing?',
+    answer: 'To sign up for Young Ceo Entertainment Music Publishing, visit our website and go to the Music Publishing section. Follow the registration instructions to create an account, choose your publishing plan, and provide the necessary details about your music. If you need assistance, our support team is available to help you through the process.'
+  },
+  {
+    question: 'Do I need a Ditto Music subscription to access Young Ceo Entertainment Music Publishing?',
     answer: (
       <>
-        Just{' '}
-        <a href="/signup" className="text-blue-500">
-          Become Young Ceo
-        </a>{' '}
-        using YCE Hub with your email address 🚀
+        Yes. You&apos;ll need a Independent Label subscription to access YCE Publishing. 
         <br />
         <br />
-        Select the plans that are suitable for you 🎶
-        <br />
-        <br />
-        Choose the one that&apos;s right for you and follow the step-by-step create release form process.
+        We can only collect and pay publishing royalties for music released through Young Ceo Entertainment.
       </>
     ),
   },
   {
-    question: "Can I edit my release after it's been completed but still in review?",
-    answer: "Yes, you can make edits to your release while it is still under review. However, once the release is live on stores, further changes cannot be made."
+    question: 'What is music publishing?',
+    answer: 'Music publishing involves managing the rights and revenues associated with musical compositions. This includes collecting royalties from performances, broadcasts, and other uses of the music. It ensures that songwriters and composers receive compensation for their work. Young Ceo Entertainment offers music publishing services to help you maximize the revenue from your compositions.'
   },
   {
-    question: "If I remove a release from stores, edit and re-upload it, will the same Spotify or iTunes links work?",
-    answer: "No, removing and re-uploading a release will result in new links being generated. The original Spotify or iTunes links will no longer be valid."
+    question: 'Will YCE collect Neighbouring Rights royalties?',
+    answer: 'Yes, Young Ceo Entertainment collects Neighbouring Rights royalties on your behalf. Neighbouring Rights royalties are earned from the public performance and broadcast of sound recordings. We handle the collection and distribution of these royalties to ensure you receive your share.'
   },
   {
-    question: "Can I add more stores to an existing release?",
-    answer: "Yes, you can add more stores to an existing release by editing the distribution options in your YCE account and selecting additional platforms."
+    question: 'I am the songwriter - how do I register my songs with YCE publishing?',
+    answer: 'To register your songs with Young Ceo Entertainment Music Publishing, log in to your account and navigate to the Music Publishing section. Follow the steps to submit your song details, including the title, writer credits, and other relevant information. This will allow us to register your songs with the appropriate rights organizations and start managing your publishing rights.'
   },
   {
-    question: "Can I change my release date?",
-    answer: "Yes, you can change your release date before the release has gone live. Simply update the release details in your YCE account."
-  },
-  {
-    question: "How do I change my artist or band name?",
-    answer: "To change your artist or band name, please contact YCE support. Keep in mind that this may affect your existing releases, and the change could take some time to reflect on all platforms."
-  },
+    question: 'How do I obtain an IPI/CAE Number?',
+    answer: 'An IPI (Interested Party Information) or CAE (Composer, Author, and Publisher) Number is essential for managing your royalties and rights. To obtain one, you need to register with a performance rights organization (PRO) or a music rights organization in your country. Once registered, you will receive an IPI/CAE Number that helps track and collect your royalties.'
+  }
 ];
 
-export default EditSupport;
+
+export default PublishingSupport;

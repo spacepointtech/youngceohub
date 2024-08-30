@@ -1,10 +1,9 @@
 'use client';
-import '@/app/style.css'
-import React, { useState } from 'react';
 import Image from 'next/image';
-import { FaSearch, FaChevronRight, FaChevronDown, FaEdit } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaSearch, FaChevronRight, FaChevronDown, FaEdit, FaChartLine } from 'react-icons/fa';
 
-const EditSupport = () => {
+const PromotionSupport = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -52,17 +51,17 @@ const EditSupport = () => {
       <div className="container mx-auto px-6 pb-16">
         <div className={`faq-header flex items-center justify-between mb-6 ${openIndex !== null ? 'blur-md' : ''}`}>
           <div className="flex flex-col">
-            <FaEdit className="text-4xl mb-4 opacity-30"/>
-            <h2 className="text-2xl font-semibold">Making Edits</h2>
+            <FaChartLine className="text-4xl mb-4 opacity-30"/>
+            <h2 className="text-2xl font-semibold">Music Promotion</h2>
           </div>
           <div className="faq-logo">
             <Image src="/images/logo.png" alt="Young CEO Entertainment" height={200} width={200} />
           </div>
         </div>
-        <p className={`text-sm opacity-75 mb-6 ${openIndex !== null ? 'blur-md' : ''}`}>Answers to questions we are asked most often.</p>
+        <p className={`text-sm opacity-75 mb-6 ${openIndex !== null ? 'blur-md' : ''}`}>Learn More about Promotion services.</p>
         <p className={`text-sm opacity-50 mb-12 ${openIndex !== null ? 'blur-md' : ''}`}>{filteredFaqItems.length} Articles</p>
 
-        
+        {/* FAQ Container */}
         <div className="faq-container bg-[#484848] bg-opacity-[24%] border border-[#A6A6A6] rounded-lg p-6">
           <div className="faq-list">
             {filteredFaqItems.length > 0 ? (
@@ -89,46 +88,10 @@ const EditSupport = () => {
   );
 };
 
-
 const faqItems = [
-  {
-    question: 'What do I need to start releasing music?',
-    answer: (
-      <>
-        Just{' '}
-        <a href="/signup" className="text-blue-500">
-          Become Young Ceo
-        </a>{' '}
-        using YCE Hub with your email address 🚀
-        <br />
-        <br />
-        Select the plans that are suitable for you 🎶
-        <br />
-        <br />
-        Choose the one that&apos;s right for you and follow the step-by-step create release form process.
-      </>
-    ),
-  },
-  {
-    question: "Can I edit my release after it's been completed but still in review?",
-    answer: "Yes, you can make edits to your release while it is still under review. However, once the release is live on stores, further changes cannot be made."
-  },
-  {
-    question: "If I remove a release from stores, edit and re-upload it, will the same Spotify or iTunes links work?",
-    answer: "No, removing and re-uploading a release will result in new links being generated. The original Spotify or iTunes links will no longer be valid."
-  },
-  {
-    question: "Can I add more stores to an existing release?",
-    answer: "Yes, you can add more stores to an existing release by editing the distribution options in your YCE account and selecting additional platforms."
-  },
-  {
-    question: "Can I change my release date?",
-    answer: "Yes, you can change your release date before the release has gone live. Simply update the release details in your YCE account."
-  },
-  {
-    question: "How do I change my artist or band name?",
-    answer: "To change your artist or band name, please contact YCE support. Keep in mind that this may affect your existing releases, and the change could take some time to reflect on all platforms."
-  },
+  { question: 'What is Chartbreaker?', answer: 'Chartbreaker is our premium music promotion service designed to help your tracks achieve chart success. It includes targeted marketing campaigns, playlist placements, and analytics to boost your music’s visibility and performance.' },
+  { question: 'What promotional services do you offer?', answer: 'We offer a range of promotional services, including targeted social media campaigns, playlist pitching, and influencer partnerships. These services are designed to increase your music’s exposure and engagement across various platforms.' },
+  { question: 'What happens once I\'ve purchased Chartbreaker?', answer: 'After purchasing Chartbreaker, our team will contact you to discuss your promotional goals and strategies. We’ll set up your campaign, provide regular updates, and deliver comprehensive analytics on your music’s performance throughout the promotion period.' },
 ];
 
-export default EditSupport;
+export default PromotionSupport;

@@ -56,13 +56,12 @@ const ArticlesReleasesComponent = () => {
             <h2 className="text-2xl font-semibold">The Basics</h2>
           </div>
           <div className="faq-logo">
-            <Image src="/images/logo.png" alt="Young CEO Entertainment" height={100} width={150} />
+            <Image src="/images/logo.png" alt="Young CEO Entertainment" height={200} width={200} />
           </div>
         </div>
         <p className={`text-sm opacity-75 mb-6 ${openIndex !== null ? 'blur-md' : ''}`}>How to get Started releasing music</p>
         <p className={`text-sm opacity-50 mb-12 ${openIndex !== null ? 'blur-md' : ''}`}>{filteredFaqItems.length} Articles</p>
 
-        {/* FAQ Container */}
         <div className="faq-container bg-[#484848] bg-opacity-[24%] border border-[#A6A6A6] rounded-lg p-6">
           <div className="faq-list">
             {filteredFaqItems.length > 0 ? (
@@ -89,7 +88,7 @@ const ArticlesReleasesComponent = () => {
   );
 };
 
-// Example FAQ items
+
 const faqItems = [
   { question: 'What is Young Ceo Entertainment', answer: 'Young CEO Entertainment is a platform for local street artists, rappers, musicians, and beat producers to empower them to become their own CEOs and bring them to major audio streaming platforms like Spotify, AppleMusic, JioSaavn etc. Popular streaming platforms like these do not work with artists directly, they only work with distribution companies. That is where we come into the picture. We enable artists to leave the hassles of distribution to us and focus more on their art & creativity!' },
   { 
