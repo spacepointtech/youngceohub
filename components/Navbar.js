@@ -29,7 +29,7 @@ export default function Navbar() {
           <div className="hidden sm:flex space-x-4">
             <Link href="/" className="hover:text-gray-400">Home</Link>
             <Link href="/music" className="hover:text-gray-400">Music Distribution</Link>
-            <Link href="/team" className="hover:text-gray-400">Our Services</Link>
+            <Link href="/services" className="hover:text-gray-400">Our Services</Link>
             <Link href="/support" className="hover:text-gray-400">Support</Link>
             <Link href="/contact" className="hover:text-gray-400">Contact us</Link>
           </div>
