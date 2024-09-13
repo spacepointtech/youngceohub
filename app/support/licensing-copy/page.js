@@ -127,7 +127,7 @@ const faqItems = [
       <>
         You can view your contract and all the associated terms and conditions by visiting the 
         <a href="/terms-and-conditions" className="text-blue-500"> Terms & Conditions </a> 
-        page. It's important to review this document to understand your rights and obligations as a Young Ceo.
+        page. It&apos;'s important to review this document to understand your rights and obligations as a Young Ceo.
       </>
     ),
   },

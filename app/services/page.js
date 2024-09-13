@@ -5,13 +5,13 @@ export default function ServicesPage() {
   return (
     <div className="bg-black min-h-screen w-full text-white font-poppins">
       {/* Background Image */}
-      <div className="relative w-full h-[544px] pt-16">
+      <div className="relative w-full top-100 h-[544px] pt-16">
         <Image
-          src="/images/vector.png"
+          src="/images/vector1.png"
           alt="Background Image"
           layout="fill"
           objectFit="cover"
-          className="absolute"
+          className="relative"
         />
       </div>
 
