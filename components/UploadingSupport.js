@@ -52,7 +52,7 @@ const SupportPage = () => {
             <h2 className="text-2xl font-semibold">Uploading Music</h2>
           </div>
           <div className="faq-logo">
-            <img src="/images/logo.png" alt="Young CEO Entertainment" height={100} width={150} />
+            <Image src="/images/logo.png" alt="Young CEO Entertainment" height={100} width={150} />
           </div>
         </div>
         <p className="text-sm opacity-75 mb-6">Advice on using our release builder.</p>
