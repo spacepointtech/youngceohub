@@ -7,8 +7,12 @@ export default function Layout({ children }) {
   const pathname = usePathname(); // Get the current path
 
   // Hide Navbar on the login/signup/reset page
-  const hideNavbar = pathname === '/login' || pathname === '/signup' || pathname === '/reset' || pathname === '/login/dashboard' || pathname === '/login/dashboard/question1'
-  || pathname === '/login/dashboard/question2' || pathname === '/login/dashboard/question3' || pathname === '/login/dashboard/question4' || pathname === '/login/dashboard/question5' || pathname === '/login/dashboard/question6' || pathname === '/login/dashboard/question4';
+  const hideNavbar = pathname === '/login' || pathname === '/signup' || pathname === '/reset' 
+  || pathname === '/login/dashboard' || pathname === '/login/dashboard/question1' || pathname === '/login/dashboard/question2' 
+  || pathname === '/login/dashboard/question3' || pathname === '/login/dashboard/question4' 
+  || pathname === '/login/dashboard/question5' || pathname === '/login/dashboard/question6' 
+  || pathname === '/login/dashboard/question4' || pathname==='/login/dashboard/rel-quest'
+  || pathname==='/login/dashboard/rel-quest1' || pathname==='/login/dashboard/rel-quest3';
 
   return (
     <html lang="en">

@@ -1,6 +1,7 @@
 
 import Image from 'next/image'
 import '@/app/style.css'
+
 export default function ServicesPage() {
   return (
     <div className="bg-black min-h-screen w-full text-white font-poppins">
@@ -28,12 +29,20 @@ export default function ServicesPage() {
         {/* Global Music Distribution */}
         <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
           <div className="md:w-1/2">
+               
             <h2 className="text-3xl font-semibold">Global Music Distribution</h2>
             <p className="mt-4 text-lg text-justify">
               We ensure your music reaches every corner of the world by distributing your tracks to major streaming platforms, including Spotify, Apple Music, YouTube Music, and more. Our seamless process guarantees that your songs are available to fans worldwide with just a few clicks.
             </p>
           </div>
           <div className="md:w-1/2 bg-[#0F0F0F] rounded-lg p-6 h-[500px]">
+          <Image
+              src="/images/globe.png"
+              alt="globe"
+              width={599}
+              height={575}
+              className="rounded-lg"
+            />
           </div>
         </div>
 
@@ -80,6 +89,13 @@ export default function ServicesPage() {
         {/* 24/7 Artist Support */}
         <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
           <div className="md:w-1/2 bg-[#0F0F0F] rounded-lg p-6 h-[500px]">
+          <Image
+              src="/images/supservice.png"
+              alt="24 X 7"
+              width={599}
+              height={500}
+              className="rounded-lg"
+            />
           </div>
           <div className="md:w-1/2">
             <h2 className="text-3xl font-semibold">24/7 Artist Support</h2>

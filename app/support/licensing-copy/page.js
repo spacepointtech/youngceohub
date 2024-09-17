@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { FaSearch, FaChevronRight, FaChevronDown, FaEdit, FaClipboard } from 'react-icons/fa';
+import '@/app/style.css';
 
 const LicenseSupport = () => {
   const [searchTerm, setSearchTerm] = useState('');
