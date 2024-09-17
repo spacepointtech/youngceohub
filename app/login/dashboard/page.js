@@ -1,11 +1,10 @@
-
-// test code
 'use client';
 import React from 'react';
-import { FaMusic, FaUsers, FaTshirt, FaVideo, FaCog, FaSignOutAlt, FaBolt, FaBell, FaArrowRight, FaYoutube, FaSpotify, FaInstagram, FaApple } from 'react-icons/fa';
+import { FaMusic, FaUsers, FaTshirt, FaVideo, FaCog, FaSignOutAlt, FaBolt, FaBell, FaArrowRight, FaYoutube, FaSpotify, FaInstagram, FaApple, FaItunes, FaItunesNote } from 'react-icons/fa';
 import { Line } from 'react-chartjs-2';
 import { Chart, LineElement, CategoryScale, LinearScale, PointElement, Title, Tooltip, Legend } from 'chart.js';
 import Image from 'next/image';
+import Link from 'next/link'; // Import Link from next/link
 
 Chart.register(LineElement, CategoryScale, LinearScale, PointElement, Title, Tooltip, Legend);
 
@@ -34,8 +33,8 @@ export default function Dashboard() {
 
   return (
     <div className="flex h-screen bg-black font-poppins overflow-hidden">
-       {/* Sidebar */}
-       <div className="sidebar bg-white h-screen w-64 text-black flex flex-col justify-between p-4 rounded-r-3xl">
+      {/* Sidebar */}
+      <div className="sidebar bg-white h-full w-80 text-black flex flex-col justify-between p-4 rounded-r-3xl">
         <div>
           {/* Profile Section */}
           <div className="bg-black bg-opacity-77 rounded-lg p-4 mb-8">
@@ -44,57 +43,59 @@ export default function Dashboard() {
                 src="/images/avtaar.png"
                 height={50}
                 width={50}
+                alt="Profile"
               />
-              <div className="ml-4">
-                <div className="w-full bg-gray-400 rounded-full h-1 mt-2">
-                  <div className="bg-green-400 h-1 rounded-full" style={{ width: '20%' }}></div>
+              <div className="ml-4 w-full">
+                <div className="flex justify-between items-center">
+                  <div className="w-3/4 bg-gray-400 rounded-full h-1 mt-2">
+                    <div className="bg-white h-1 rounded-full" style={{ width: '20%' }}></div>
+                  </div>
+                  <span className="text-xs text-gray-600 ml-2">20%</span>
                 </div>
-                <div className="flex justify-between items-center mt-2">
-                  <p className="text-sm font-semibold">Aman</p>
-                  <span className="text-xs text-gray-600">20%</span>
-                </div>
-                <p className="text-xs mt-2 p-2 text-center border border-white rounded-lg text-white">Complete your profile</p>
+                <Link href="/login/dashboard/question1">
+                  <p className="text-xs mt-2 py-1 text-center border border-white rounded-lg text-white leading-none" style={{ fontSize: '10px' }}>
+                    Complete your profile
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
-          
+
           {/* Logo */}
           <div className="logo mb-4 flex justify-center">
-              <Image src="/images/blacklogo.png" alt="Young CEO Entertainment" height={400} width={400} />
+            <Image src="/images/blacklogo.png" alt="Young CEO Entertainment" height={400} width={400} />
           </div>
-          
-           {/* Menu */}
-           <nav className="mt-4">
+
+          {/* Menu */}
+          <nav className="mt-4">
             <ul className="space-y-4 text-center">
-              <li className="hover:bg-black hover:rounded-l-[40%] p-2 rounded-r-lg flex justify-normal items-center">
+              <li className="p-2 rounded-r-lg flex items-center">
                 <FaMusic className="mr-3" /> Music
               </li>
-              <li className="hover:bg-black hover:rounded-l-[40%] p-2 rounded-r-lg flex justify-normal items-center">
+              <li className="p-2 rounded-r-lg flex items-center">
                 <FaUsers className="mr-3" /> Audience
               </li>
-              <li className="hover:bg-black hover:rounded-l-[40%] p-2 rounded-r-lg flex justify-normal items-center">
+              <li className="p-2 rounded-r-lg flex items-center">
                 <FaTshirt className="mr-3" /> Merch
               </li>
-              <li className="hover:bg-black hover:rounded-l-[40%] p-2 rounded-r-lg flex justify-normal items-center">
+              <li className="p-2 rounded-r-lg flex items-center">
                 <FaVideo className="mr-3" /> Video & Visuals
               </li>
-              <li className="hover:bg-black hover:rounded-l-[40%] p-2 rounded-r-lg flex justify-normal items-center">
+              <li className="p-2 rounded-r-lg flex items-center">
                 <FaCog className="mr-3" /> Settings
               </li>
             </ul>
           </nav>
-          </div>
-      
-      {/* Logout and Upgrade */}
-      <div>
-          <div className="mb-4">
-            <button className="bg-black w-full py-3 rounded-lg flex items-center justify-center text-white">
-              <FaSignOutAlt className="mr-2" /> Logout
-            </button>
-          </div>
+        </div>
+
+        {/* Logout */}
+        <div className="mb-4">
+          <button className="bg-black w-full py-3 rounded-lg flex items-center justify-center text-white">
+            <FaSignOutAlt className="mr-2" /> Logout
+          </button>
+        </div>
       </div>
-      
-     </div>
+
       {/* Main Content */}
       <div className="w-full">
         {/* Header */}
@@ -109,6 +110,7 @@ export default function Dashboard() {
               className="w-10 h-10 rounded-full"
               height={20}
               width={20}
+              alt="Profile Avatar"
             />
           </a>
         </header>
@@ -134,18 +136,18 @@ export default function Dashboard() {
 
           {/* Streams and Analytics */}
           <div className="grid grid-cols-3 gap-8">
-            <div className="col-span-2 bg-[#191919] rounded-lg p-6 relative h-64">
+            <div className="col-span-2 bg-[#191919] rounded-lg p-6 relative h-72">
               <h3 className="text-lg font-semibold mb-4">Streams</h3>
               <div className="absolute top-4 right-4 flex space-x-2">
                 <FaYoutube className="text-red-500" />
                 <FaSpotify className="text-green-500" />
                 <FaInstagram className="text-pink-500" />
-                <FaApple className="text-gray-500" />
+                <FaItunes className="text-white-500" />
                 <FaArrowRight className="text-white" />
               </div>
               <Line data={data} options={options} />
             </div>
-            <div className="bg-[#191919] rounded-lg p-6 h-64">
+            <div className="bg-[#191919] rounded-lg p-6 h-72">
               <h3 className="text-lg font-semibold mb-4">Analytic platform</h3>
               <div className="w-20 h-20 mx-auto mb-4">
                 <svg viewBox="0 0 36 36" className="circular-chart">
@@ -155,10 +157,10 @@ export default function Dashboard() {
                     d="M18 2.0845
                       a 15.9155 15.9155 0 0 1 0 31.831
                       a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
+                  />
                 </svg>
               </div>
-                <p>Your Analytics Will be applied Here</p>
+              <p>Your Analytics Will be applied Here</p>
             </div>
           </div>
         </div>
@@ -166,3 +168,4 @@ export default function Dashboard() {
     </div>
   );
 }
+

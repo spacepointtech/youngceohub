@@ -234,7 +234,7 @@ export default function CreateRelease() {
                 
                 </Link>
 
-                <Link href='/login/dashboard/rel-quest1'>
+                <Link href='/login/dashboard/rel-quest2'>
                  <button className="bg-white text-black py-2 px-4 rounded">Next</button>
 
                  </Link>

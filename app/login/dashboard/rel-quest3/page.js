@@ -1,32 +1,27 @@
+
 'use client';
 import React, { useState } from 'react';
-import { FaMusic, FaUsers, FaTshirt, FaVideo, FaCog, FaSignOutAlt, FaBell, FaChevronDown, FaPlus, FaMinus, FaArrowLeft, FaAngleLeft, FaUpload } from 'react-icons/fa';
+import { FaMusic, FaUsers, FaTshirt, FaVideo, FaCog, FaSignOutAlt, FaBell, FaChevronDown, FaPlus, FaMinus, FaArrowLeft, FaAngleLeft, FaUpload, FaCloudUploadAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
+import '@/app/style.css';
 
 export default function CreateRelease() {
-  const [contributors, setContributors] = useState([]);
-  const [role, setRole] = useState('');
-  const [name, setName] = useState('');
   const [trackFile, setTrackFile] = useState(null);
   const [catalogFile, setCatalogFile] = useState(null);
   const [coverFile, setCoverFile] = useState(null);
+  const [trackFileName, setTrackFileName] = useState('');
+  const [catalogFileName, setCatalogFileName] = useState('');
+  const [coverFileName, setCoverFileName] = useState('');
 
-  const handleAddContributor = () => {
-    if (role && name) {
-      setContributors([...contributors, { role, name }]);
-      setRole('');
-      setName('');
+  const handleFileUpload = (e, setFile, setFileName, allowedTypes) => {
+    const file = e.target.files[0];
+    if (file && allowedTypes.includes(file.type)) {
+      setFile(file);
+      setFileName(file.name); // Set the file name
+    } else {
+      alert('Invalid file type. Please upload a valid file.');
     }
-  };
-
-  const handleRemoveContributor = (index) => {
-    const newContributors = contributors.filter((_, i) => i !== index);
-    setContributors(newContributors);
-  };
-
-  const handleFileUpload = (e, setFile) => {
-    setFile(e.target.files[0]);
   };
 
   return (
@@ -58,7 +53,7 @@ export default function CreateRelease() {
               </div>
             </div>
           </div>
-
+          
           {/* Logo */}
           <div className="logo mb-4 flex justify-center">
             <Image src="/images/blacklogo.png" alt="Young CEO Entertainment" height={400} width={400} />
@@ -97,7 +92,7 @@ export default function CreateRelease() {
       {/* Main Content */}
       <div className="w-full flex flex-col items-center justify-center">
         {/* Header */}
-        <header className="bg-black text-white py-4 px-8 flex justify-end items-center space-x-6 border-b border-white w-full">
+        <header className="bg-black text-white py-4 px-8 flex justify-end items-center space-x-6 border-b border-white w-full mt-7">
           <div className="relative">
             <FaBell className="text-gray-400 cursor-pointer" />
             <span className="absolute top-0 right-0 bg-red-500 text-xs rounded-full w-2 h-2"></span>
@@ -116,7 +111,7 @@ export default function CreateRelease() {
         {/* Main Body */}
         <div className="w-full max-w-3xl p-8">
           {/* Essential Details text */}
-          <h3 className="text-white text-2xl text-left mb-6">Essential Details for Your Next Big Release</h3>
+          <h3 className="text-white text-2xl text-center mb-6">Essential Details for Your Next Big Release</h3>
 
           {/* Key Details container box */}
           <div className="bg-[#1A1A1A] border border-[#262626] p-6 rounded-lg relative">
@@ -136,12 +131,15 @@ export default function CreateRelease() {
               <div className="space-y-4 mb-8">
                 <label className="text-white block mb-2 mt-3">Add Tracks from Computer</label>
                 <div className="flex space-x-4">
-                  <button className="w-1/2 p-3 flex items-center justify-center bg-[#CDCDCD] text-black rounded">
-                    From Computer
-                  </button>
-                  <button className="w-1/2 p-3 flex items-center justify-center border border-white border-dashed text-white rounded">
-                    <FaUpload className="mr-2" /> Upload
-                  </button>
+                  <label className="w-full p-3 flex items-center justify-center border border-white text-white rounded h-12 cursor-pointer relative">
+                    <input
+                      type="file"
+                      className="absolute inset-0 opacity-0 cursor-pointer"
+                      onChange={(e) => handleFileUpload(e, setTrackFile, setTrackFileName, ['audio/wav'])}
+                    />
+                    <FaCloudUploadAlt className="text-4xl mr-2" />
+                    <span>{trackFileName || 'Upload From Computer'}</span>
+                  </label>
                 </div>
               </div>
 
@@ -149,33 +147,40 @@ export default function CreateRelease() {
               <div className="space-y-4 mb-8">
                 <label className="text-white block mb-2">Add from Catalog</label>
                 <div className="flex space-x-4">
-                  <button className="w-1/2 p-3 flex items-center justify-center bg-[#CDCDCD] text-black rounded">
-                    From Catalog
-                  </button>
-                  <button className="w-1/2 p-3 flex items-center justify-center border border-white border-dashed text-white rounded">
-                    <FaUpload className="mr-2" /> Upload
-                  </button>
+                  <label className="w-full p-3 flex items-center justify-center border border-white text-white rounded h-12 cursor-pointer relative">
+                    <input
+                      type="file"
+                      className="absolute inset-0 opacity-0 cursor-pointer"
+                      onChange={(e) => handleFileUpload(e, setCatalogFile, setCatalogFileName, ['audio/wav'])}
+                    />
+                    <FaCloudUploadAlt className="text-4xl mr-2" />
+                    <span>{catalogFileName || 'Upload from Catalog'}</span>
+                  </label>
                 </div>
               </div>
 
-              {/* Upload Cover Photo */}
-              <div className="flex space-x-6">
+             {/* Upload Cover Photo */}
+             <div className="flex space-x-6">
                 <div className="w-1/2">
                   <label className="text-white block mb-2">Upload Cover Photo</label>
-                  <button className="w-full p-3 flex items-center justify-center border border-white border-dashed text-white rounded h-44">
-                    <FaUpload className="mr-2" /> Upload Cover Photo
-                  </button>
-                  <label className="cursor-pointer mt-2 inline-block text-sm text-white">
+
+                  {/* Upload Box */}
+                  <label className="w-full p-3 flex items-center justify-center border-2 border-white border-dashed text-white rounded h-44 cursor-pointer relative">
                     <input
                       type="file"
-                      className="hidden"
-                      onChange={(e) => handleFileUpload(e, setCoverFile)}
+                      className="absolute inset-0 opacity-0 cursor-pointer"
+                      onChange={(e) => handleFileUpload(e, setCoverFile, setCoverFileName, ['image/png', 'image/jpeg', 'image/jpg'])}
                     />
-                    Choose Cover File
+                    <FaCloudUploadAlt className="text-4xl mr-2" />
+                    <span>{coverFileName || 'Upload Cover Photo'}</span>
                   </label>
                 </div>
-
-                <div className="w-1/2 text-xs text-gray-400 opacity-70 mt-20">
+                
+                 
+                <div className="w-1/2 text-xs text-gray-400 opacity-70 mt-10">
+                <h5 className="text-xs text-white mb-2 font-semibold">Cover Art Requirement:</h5>
+                  <p className="text-xs text-gray-400 mb-4">Size: 300X300PX</p>
+                  <p className="text-xs text-gray-400 mb-4">Format: JPG, JPEG or PNG</p>
                   <p>Ensure you own the rights to all artwork elements. Information must match release metadata. Stores reject blurry, low-quality images or those with URLs, contact info, barcodes, prices, or logos. No explicit content. Non-compliant artwork will be rejected.</p>
                 </div>
               </div>
@@ -185,7 +190,8 @@ export default function CreateRelease() {
                 <Link href='/login/dashboard'>
                   <button className="border border-[#A6A6A6] text-white py-2 px-4 rounded mr-4">Cancel</button>
                 </Link>
-                <Link href='/login/dashboard/rel-quest1'>
+
+                <Link href='/login/dashboard/submission'>
                   <button className="bg-white text-black py-2 px-4 rounded">Next</button>
                 </Link>
               </div>
@@ -196,3 +202,5 @@ export default function CreateRelease() {
     </div>
   );
 }
+
+
