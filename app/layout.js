@@ -8,11 +8,12 @@ export default function Layout({ children }) {
 
   // Hide Navbar on the login/signup/reset page
   const hideNavbar = pathname === '/login' || pathname === '/signup' || pathname === '/reset' 
-  || pathname === '/login/dashboard' || pathname === '/login/dashboard/question1' || pathname === '/login/dashboard/question2' 
-  || pathname === '/login/dashboard/question3' || pathname === '/login/dashboard/question4' 
-  || pathname === '/login/dashboard/question5' || pathname === '/login/dashboard/question6' 
-  || pathname === '/login/dashboard/question4' || pathname==='/login/dashboard/rel-quest'
-  || pathname==='/login/dashboard/rel-quest1' || pathname==='/login/dashboard/rel-quest3';
+  || pathname === '/dashboard' || pathname === '/dashboard/question1' || pathname === '/dashboard/question2' 
+  || pathname === '/dashboard/question3' || pathname === '/dashboard/question4' 
+  || pathname === '/dashboard/question5' || pathname === '/dashboard/question6' 
+  || pathname === '/dashboard/question4' || pathname==='/dashboard/rel-quest'
+  || pathname==='/dashboard/rel-quest1' || pathname==='/dashboard/rel-quest2'
+  || pathname==='/dashboard/rel-quest3' || pathname==='/dashboard/submission';
 
   return (
     <html lang="en">

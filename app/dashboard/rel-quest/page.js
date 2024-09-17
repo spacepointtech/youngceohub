@@ -212,13 +212,13 @@ export default function CreateRelease() {
               {/* Submit and Cancel Buttons */}
               
               <div className="mt-6 flex justify-center items-center"> 
-                <Link href='/login/dashboard'>
+                <Link href='/dashboard'>
                 
                 <button className="border  border-[#A6A6A6] text-white py-2 px-4 rounded mr-4">Cancel</button>
                 
                 </Link>
 
-                <Link href='/login/dashboard/rel-quest1'>
+                <Link href='/dashboard/rel-quest1'>
                  <button className="bg-white text-black py-2 px-4 rounded">Next</button>
 
                  </Link>

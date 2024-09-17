@@ -11,8 +11,8 @@ export default function Dashboard() {
 
   return (
     <div className="flex h-screen bg-black font-poppins overflow-hidden">
-         {/* Sidebar */}
-         <div className="sidebar bg-white h-full w-80 text-black flex flex-col justify-between p-4 rounded-r-3xl">
+           {/* Sidebar */}
+      <div className="sidebar bg-white h-full w-80 text-black flex flex-col justify-between p-4 rounded-r-3xl">
         <div>
           {/* Profile Section */}
           <div className="bg-black bg-opacity-77 rounded-lg p-4 mb-8">
@@ -83,28 +83,28 @@ export default function Dashboard() {
         <div className="bg-black bg-opacity-40 backdrop-blur-lg text-white w-[50%] p-8 rounded-lg shadow-lg mt-12 z-10 relative">
           {/* Illustration */}
           <div className="flex justify-center mb-6">
-            <Image src="/images/vid.svg" alt="Illustration" height={300} width={300} />
+            <Image src="/images/amico.svg" alt="Illustration" height={300} width={300} />
           </div>
 
           {/* Dropdown and Conditional Textbox */}
           <div className="mt-4">
             <p className="text-center mb-2 font-bold text-xl">Do you have previous works</p>
-            <p className="text-center mb-4 font-bold text-xl">on Youtube?</p>
+            <p className="text-center mb-4 font-bold text-xl">on Spotify?</p>
             <select
               className="bg-transparent border border-white text-white w-full p-2 rounded-lg"
               value={spotifyStatus}
               onChange={(e) => setSpotifyStatus(e.target.value)}
             >
               <option value="" disabled>Select an option</option>
-              <option value="yes">Yes, I am already on Youtube</option>
-              <option value="no">No, I don't have Youtube Channel</option>
+              <option value="yes">Yes, I am already on Spotify</option>
+              <option value="no">No, I don&apos;t have a Spotify account</option>
             </select>
 
             {spotifyStatus === 'yes' && (
               <div className="mt-4">
                 <input
                   type="text"
-                  placeholder="Provide link to your Youtube Channel Link"
+                  placeholder="Provide link to your Spotify handle"
                   className="bg-transparent border border-white text-white w-full p-2 rounded-lg"
                   value={spotifyLink}
                   onChange={(e) => setSpotifyLink(e.target.value)}
