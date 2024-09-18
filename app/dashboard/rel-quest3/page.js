@@ -92,7 +92,7 @@ export default function CreateRelease() {
       {/* Main Content */}
       <div className="w-full flex flex-col items-center justify-center">
         {/* Header */}
-        <header className="bg-black text-white py-4 px-8 flex justify-end items-center space-x-6 border-b border-white w-full mt-7">
+        <header className="bg-black text-white py-4 px-8 flex justify-end items-center space-x-6 border-b border-white w-full mt-32">
           <div className="relative">
             <FaBell className="text-gray-400 cursor-pointer" />
             <span className="absolute top-0 right-0 bg-red-500 text-xs rounded-full w-2 h-2"></span>
@@ -110,6 +110,13 @@ export default function CreateRelease() {
 
         {/* Main Body */}
         <div className="w-full max-w-3xl p-8">
+        <div className="bg-[#1A1A1A] text-white p-6 rounded-lg flex justify-between items-center mb-4 relative overflow-visible">
+            <div>
+          
+              <p className="mt-2 opacity-75">--- Song Details Box --- </p>
+            </div>
+           
+          </div>
           {/* Essential Details text */}
           <h3 className="text-white text-2xl text-center mb-6">Essential Details for Your Next Big Release</h3>
 

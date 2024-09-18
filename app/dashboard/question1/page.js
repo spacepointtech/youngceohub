@@ -96,35 +96,37 @@ export default function Dashboard() {
           <div className="mt-4">
             <p className="mb-2 text-center">I am a:</p>
             <div className="border rounded-lg flex items-center justify-center p-2">
-              <div
-                className={`flex-1 flex items-center justify-center cursor-pointer p-4 ${selectedArtistType === 'independent' ? 'bg-white text-black' : 'bg-transparent text-white'}`}
-                onClick={() => setSelectedArtistType('independent')}
-              >
-                <input
-                  type="radio"
-                  name="artist_type"
-                  id="independent"
-                  className="mr-2"
-                  checked={selectedArtistType === 'independent'}
-                  onChange={() => setSelectedArtistType('independent')}
-                />
-                <label htmlFor="independent">Independent artist</label>
-              </div>
-              <div
-                className={`flex-1 flex items-center justify-center cursor-pointer p-4 ${selectedArtistType === 'label' ? 'bg-white text-black' : 'bg-transparent text-white'}`}
-                onClick={() => setSelectedArtistType('label')}
-              >
-                <input
-                  type="radio"
-                  name="artist_type"
-                  id="label"
-                  className="mr-2"
-                  checked={selectedArtistType === 'label'}
-                  onChange={() => setSelectedArtistType('label')}
-                />
-                <label htmlFor="label">Signed to a Label</label>
-              </div>
-            </div>
+  <div
+    className={`flex-1 flex items-center justify-center cursor-pointer p-4 ${selectedArtistType === 'independent' ? 'bg-white text-black' : 'bg-transparent text-white'}`}
+    onClick={() => setSelectedArtistType('independent')}
+  >
+    <input
+      type="radio"
+      name="artist_type"
+      id="independent"
+      className="mr-2 h-5 w-5 appearance-none border-2 border-white rounded-full checked:bg-black checked:border-white focus:outline-none"
+      checked={selectedArtistType === 'independent'}
+      onChange={() => setSelectedArtistType('independent')}
+    />
+    <label htmlFor="independent">Independent artist</label>
+  </div>
+
+  <div
+    className={`flex-1 flex items-center justify-center cursor-pointer p-4 ${selectedArtistType === 'label' ? 'bg-white text-black' : 'bg-transparent text-white'}`}
+    onClick={() => setSelectedArtistType('label')}
+  >
+    <input
+      type="radio"
+      name="artist_type"
+      id="label"
+      className="mr-2 h-5 w-5 appearance-none border-2 border-white rounded-full checked:bg-black checked:border-white focus:outline-none"
+      checked={selectedArtistType === 'label'}
+      onChange={() => setSelectedArtistType('label')}
+    />
+    <label htmlFor="label">Signed to a Label</label>
+  </div>
+</div>
+
           </div>
 
           <button className="bg-white text-black w-full py-2 mt-6 rounded-lg font-semibold">

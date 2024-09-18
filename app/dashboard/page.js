@@ -129,9 +129,11 @@ export default function Dashboard() {
               <h3 className="text-lg font-semibold text-black">Release today!</h3>
               <p className="text-gray-400">Submit your release today and join the multitude of artists already using Young CEO Entertainment.</p>
             </div>
+            <Link href="/dashboard/rel-quest" > 
             <button className="bg-black hover:bg-gray-800 text-white py-2 px-4 rounded-lg flex items-center">
               Create New Release <FaArrowRight className="ml-2" />
             </button>
+            </Link>
           </div>
 
           {/* Streams and Analytics */}

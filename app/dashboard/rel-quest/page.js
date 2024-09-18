@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FaMusic, FaUsers, FaTshirt, FaVideo, FaCog, FaSignOutAlt, FaBell, FaChevronDown } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
+import '@/app/style.css';
 
 export default function CreateRelease() {
   const [releaseType, setReleaseType] = useState('');
@@ -81,9 +82,9 @@ export default function CreateRelease() {
       </div>
 
       {/* Main Content */}
-      <div className="w-full">
+      <div className="w-full flex flex-col items-center justify-center">
         {/* Header */}
-        <header className="bg-black text-white py-4 px-8 flex justify-end items-center space-x-6 border-b border-white">
+        <header className="bg-black text-white py-4 px-8 flex justify-end items-center space-x-6 border-b border-white w-full mt-52">
           <div className="relative">
             <FaBell className="text-gray-400 cursor-pointer" />
             <span className="absolute top-0 right-0 bg-red-500 text-xs rounded-full w-2 h-2"></span>
@@ -100,7 +101,7 @@ export default function CreateRelease() {
         </header>
 
         {/* Main Body */}
-        <div className="w-full p-8">
+        <div className="w-full max-w-3xl justify-between p-8">
           {/* Greetings Box */}
           <div className="bg-[#1A1A1A] text-white p-6 rounded-lg flex justify-between items-center mb-4 relative overflow-visible mt-20">
             <div>
@@ -117,7 +118,7 @@ export default function CreateRelease() {
           </div>
 
           {/* Essential Details text */}
-          <h3 className="text-white text-2xl text-left mb-6">Essential Details for Your Next Big Release</h3> {/* Increased font size */}
+          <h3 className="text-white text-2xl text-center mb-6">Essential Details for Your Next Big Release</h3> {/* Increased font size */}
 
           {/* Key Details container box*/}
           <div className="bg-[#1A1A1A] border border-[#262626] p-6 rounded-lg flex items-start relative">
@@ -126,9 +127,9 @@ export default function CreateRelease() {
               src="/images/C1.png"
               alt="Key Details Illustration"
               objectFit="cover"
-              className="absolute left-14 opacity-70 top-8"
+              className="absolute opacity-70 top-8"
               width={380}
-              height={150}
+              height={250}
             />
 
             <div className="w-1/2 relative z-10 ml-auto mr-8"> 

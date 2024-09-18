@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { FaMusic, FaUsers, FaTshirt, FaVideo, FaCog, FaSignOutAlt, FaBell, FaChevronDown, FaPlus, FaMinus, FaArrowLeft, FaAngleLeft } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
+import '@/app/style.css';
 
 export default function CreateRelease() {
-  const [releaseType, setReleaseType] = useState('');
-  const [showOtherInput, setShowOtherInput] = useState(false);
+  
   const [contributors, setContributors] = useState([]);
   const [role, setRole] = useState('');
   const [name, setName] = useState('');
@@ -96,9 +96,9 @@ export default function CreateRelease() {
       </div>
 
       {/* Main Content */}
-      <div className="w-full">
+      <div className="w-full flex flex-col items-center justify-center">
         {/* Header */}
-        <header className="bg-black text-white py-4 px-8 flex justify-end items-center space-x-6 border-b border-white">
+        <header className="bg-black text-white py-4 px-8 flex justify-end items-center space-x-6 border-b border-white w-full mt-52">
           <div className="relative">
             <FaBell className="text-gray-400 cursor-pointer" />
             <span className="absolute top-0 right-0 bg-red-500 text-xs rounded-full w-2 h-2"></span>
@@ -115,9 +115,9 @@ export default function CreateRelease() {
         </header>
 
         {/* Main Body */}
-        <div className="w-full p-8">
+        <div className="w-full max-w-3xl p-8">
           {/* Greetings Box */}
-          <div className="bg-[#1A1A1A] text-white p-6 rounded-lg flex justify-between items-center mb-4 relative overflow-visible mt-20">
+          <div className="bg-[#1A1A1A] text-white p-6 rounded-lg flex justify-between items-center mb-4 relative overflow-visible">
             <div>
           
               <p className="mt-2 opacity-75">--- Song Details Box --- </p>
@@ -126,7 +126,7 @@ export default function CreateRelease() {
           </div>
 
           {/* Essential Details text */}
-          <h3 className="text-white text-2xl text-left mb-6">Essential Details for Your Next Big Release</h3>
+          <h3 className="text-white text-2xl text-center mb-6">Essential Details for Your Next Big Release</h3>
 
           {/* Key Details container box */}
           <div className="bg-[#1A1A1A] border border-[#262626] p-6 rounded-lg flex items-start relative">
@@ -141,8 +141,8 @@ export default function CreateRelease() {
               src="/images/C2.png"
               alt="Key Details Illustration"
               objectFit="cover"
-              className="absolute left-20 opacity-70 top-8"
-              width={300}
+              className="absolute opacity-70 top-8"
+              width={370}
               height={150}
             />
 
@@ -200,13 +200,14 @@ export default function CreateRelease() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                     />
+                     <p className="text-xs text-gray-400 mt-2 opacity-60">
+                  List all contributors and their roles, ensuring accuracy.
+                </p>
                     {/* Plus Icon */}
                     <div className="bg-[#CDCDCD] p-2 rounded-full w-10 h-10 flex items-center justify-center cursor-pointer" onClick={handleAddContributor}>
                       <FaPlus className="text-black" />
                     </div>
-                     <p className="text-xs text-gray-400 mt-2 opacity-60">
-                  List all contributors and their roles, ensuring accuracy.
-                </p>
+                    
                     
                   </div>
                 </div>
