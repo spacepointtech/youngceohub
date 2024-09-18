@@ -11,12 +11,6 @@ export default function CreateRelease() {
   const [role, setRole] = useState('');
   const [name, setName] = useState('');
 
-  const handleReleaseTypeChange = (e) => {
-    const value = e.target.value;
-    setReleaseType(value);
-    setShowOtherInput(value === 'Others');
-  };
-
   const handleAddContributor = () => {
     if (role && name) {
       setContributors([...contributors, { role, name }]);
@@ -119,10 +113,8 @@ export default function CreateRelease() {
           {/* Greetings Box */}
           <div className="bg-[#1A1A1A] text-white p-6 rounded-lg flex justify-between items-center mb-4 relative overflow-visible">
             <div>
-          
-              <p className="mt-2 opacity-75">--- Song Details Box --- </p>
+              <p className="mt-2 opacity-75">--- Song Details Box ---</p>
             </div>
-           
           </div>
 
           {/* Essential Details text */}
@@ -184,31 +176,35 @@ export default function CreateRelease() {
 
                 {/* Contributors */}
                 <div>
-                  <label className="text-white block mb-2">Contributors</label>
-                  <div className="space-y-4">
-                    <input
-                      type="text"
-                      className="w-full p-3 rounded bg-[#CDCDCD] text-black"
-                      placeholder="Contributor Role"
-                      value={role}
-                      onChange={(e) => setRole(e.target.value)}
-                    />
-                    <input
-                      type="text"
-                      className="w-11/12 p-3 rounded bg-[#CDCDCD] text-black"
-                      placeholder="Contributor Name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                     <p className="text-xs text-gray-400 mt-2 opacity-60">
-                  List all contributors and their roles, ensuring accuracy.
-                </p>
-                    {/* Plus Icon */}
-                    <div className="bg-[#CDCDCD] p-2 rounded-full w-10 h-10 flex items-center justify-center cursor-pointer" onClick={handleAddContributor}>
-                      <FaPlus className="text-black" />
-                    </div>
-                    
-                    
+                  <label className="text-white block mb-2">Contributor Role</label>
+                  <input
+                    type="text"
+                    className="w-full p-3 rounded bg-[#CDCDCD] text-black"
+                    placeholder="Contributor Role"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                  />
+                  <p className="text-xs text-gray-400 mt-2 opacity-60">
+                    List all contributors and their roles, ensuring accuracy.
+                  </p>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="text"
+                    className="w-full p-3 rounded bg-[#CDCDCD] text-black"
+                    placeholder="Contributor Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+
+                  {/* Plus Icon */}
+                  <div
+                    className="bg-[#CDCDCD] p-2 rounded cursor-pointer flex items-center justify-center"
+                    onClick={handleAddContributor}
+                    style={{ width: '45px', height: '45px' }}
+                  >
+                    <FaPlus className="text-black" />
                   </div>
                 </div>
 
@@ -223,22 +219,9 @@ export default function CreateRelease() {
                     ))}
                   </div>
                 )}
-              </div>
-             
 
-                <button className="mt-4 bg-white  text-black py-2 px-4 rounded">Add Artists</button>
-              
-              <div className="mt-6 flex justify-center items-center"> 
-                <Link href='/dashboard'>
-                
-                <button className="border  border-[#A6A6A6] text-white py-2 px-4 rounded mr-4">Cancel</button>
-                
-                </Link>
+                <button className="mt-4 bg-white text-black py-2 px-4 rounded">Add Artists</button>
 
-                <Link href='/dashboard/rel-quest2'>
-                 <button className="bg-white text-black py-2 px-4 rounded">Next</button>
-
-                 </Link>
               </div>
             </div>
           </div>

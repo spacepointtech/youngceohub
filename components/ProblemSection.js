@@ -1,11 +1,16 @@
 // // ProblemSection.js
+
 // 'use client'; // for client side rendering
 // import Link from 'next/link';
 // import Image from 'next/image';
 // import { useState } from 'react';
 
+// // Import Font Awesome Icons from react-icons
+// import { FaFacebook, FaSpotify, FaApple, FaInstagram, FaYoutube, FaAmazon, FaDeezer, FaSoundcloud, FaTiktok, FaNapster, FaItunes, FaGooglePlay } from 'react-icons/fa';
+
 // export default function ProblemSection() {
 //   const [hoveredIcon, setHoveredIcon] = useState(null);
+//   const [hoveredModalIcon, setHoveredModalIcon] = useState(null); // Hover state for modal icons
 //   const [showModal, setShowModal] = useState(false); // Modal state
 
 //   const icons = [
@@ -18,11 +23,25 @@
 //   ];
 
 //   const moreIcons = [
-//     // Add the paths for the 30+ streaming platform icons
-//     { src: '/images/facebook.svg', alt: 'Facebook' },
-//     { src: '/images/jiosaavn.svg', alt: 'JioSaavn' },
-//     { src: '/images/deezer.svg', alt: 'Deezer' },
-//     // Add more icons as needed...
+//     { icon: <FaFacebook />, alt: 'Facebook' },
+//     { icon: <FaSpotify />, alt: 'Spotify' },
+//     { icon: <FaItunes />, alt: 'Apple Music' },
+//     { icon: <FaInstagram />, alt: 'Instagram' },
+//     { icon: <FaYoutube />, alt: 'YouTube' },
+//     { icon: <FaAmazon />, alt: 'Amazon Music' },
+//     { icon: <FaDeezer />, alt: 'Deezer' },
+//     { icon: <FaSoundcloud/>, alt: 'SoundCloud' },
+//     { icon: <FaTiktok/>, alt: 'Tiktok Music'},
+//     { icon: <FaNapster/>, alt: 'Napster Music'},
+//     { icon: <FaGooglePlay />, alt: 'Google Play'},
+//     { icon: <Image src="/images/shazam.svg" alt="Shazam" width={50} height={50} />, alt: 'Shazam'},
+//     { icon: <Image src="/images/jiosavan.svg" alt="Shazam" width={50} height={50} />, alt: 'Jio Savan'},
+//     { icon: <Image src="/images/tidal.svg" alt="Shazam" width={50} height={50} />, alt: 'Tidal Music'},
+//     { icon: <Image src="/images/pandora.svg" alt="Shazam" width={50} height={50} />, alt: 'Pandora Music'},
+//     { icon: <Image src="/images/beatport.svg" alt="Shazam" width={50} height={50} />, alt: 'Beatport Music'},
+//     { icon: <Image src="/images/groove.svg" alt="Shazam" width={50} height={50} />, alt: 'Groove Music'},
+//     { icon: <Image src="/images/yandex.svg" alt="Shazam" width={50} height={50} />, alt: 'Yandex Music'},
+//     { icon: <Image src="/images/groove.svg" alt="Shazam" width={50} height={50} />, alt: 'Groove Music'},
 //   ];
 
 //   return (
@@ -66,7 +85,7 @@
 //         </button>
 //       </Link>
 
-//       {/* Modal for showing more platforms */}
+//       {/* Modal for showing more platforms using FaIcons and custom icons */}
 //       {showModal && (
 //         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
 //           <div className="relative bg-black p-8 rounded-md shadow-lg max-w-3xl mx-auto text-white">
@@ -78,10 +97,17 @@
 //             </button>
 //             <h3 className="text-2xl font-semibold mb-6">We Distribute your Music on all the platforms Listed below!</h3>
 //             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
-//               {moreIcons.map((icon, index) => (
-//                 <div key={index} className="flex flex-col items-center">
-//                   <Image src={icon.src} alt={icon.alt} width={56} height={56} className="grayscale" />
-//                   <p className="mt-2 text-sm">{icon.alt}</p>
+//               {moreIcons.map((iconObj, index) => (
+//                 <div
+//                   key={index}
+//                   className="flex flex-col items-center transition-transform duration-300 hover:scale-125"
+//                   onMouseEnter={() => setHoveredModalIcon(iconObj.alt)}
+//                   onMouseLeave={() => setHoveredModalIcon(null)}
+//                 >
+//                   <div className={`text-5xl ${hoveredModalIcon === iconObj.alt ? 'text-white' : 'text-gray-400 opacity-40'}`}>
+//                     {iconObj.icon}
+//                   </div>
+//                   <p className="mt-2 text-sm">{iconObj.alt}</p>
 //                 </div>
 //               ))}
 //             </div>
@@ -93,15 +119,18 @@
 // }
 
 // ProblemSection.js
+
 'use client'; // for client side rendering
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+
 // Import Font Awesome Icons from react-icons
-import { FaFacebook, FaSpotify, FaApple, FaInstagram, FaYoutube, FaAmazon, FaDeezer, FaSoundcloud, FaTiktok, FaNapster, FaItunes, FaApplePay, FaGooglePlay } from 'react-icons/fa';
+import { FaFacebook, FaSpotify, FaApple, FaInstagram, FaYoutube, FaAmazon, FaDeezer, FaSoundcloud, FaTiktok, FaNapster, FaItunes, FaGooglePlay } from 'react-icons/fa';
 
 export default function ProblemSection() {
   const [hoveredIcon, setHoveredIcon] = useState(null);
+  const [hoveredModalIcon, setHoveredModalIcon] = useState(null); // Hover state for modal icons
   const [showModal, setShowModal] = useState(false); // Modal state
 
   const icons = [
@@ -124,8 +153,19 @@ export default function ProblemSection() {
     { icon: <FaSoundcloud/>, alt: 'SoundCloud' },
     { icon: <FaTiktok/>, alt: 'Tiktok Music'},
     { icon: <FaNapster/>, alt: 'Napster Music'},
-    { icon: <FaGooglePlay />, alt: 'Google Play Music'},
-    // Add more FaIcons as needed...
+    { icon: <FaGooglePlay />, alt: 'Google Play'},
+    { icon: <Image src="/images/shazam.svg" alt="Shazam" width={50} height={50} />, alt: 'Shazam'},
+    { icon: <Image src="/images/jiosavan.svg" alt="Shazam" width={50} height={50} />, alt: 'Jio Savan'},
+    { icon: <Image src="/images/tidal.svg" alt="Shazam" width={50} height={50} />, alt: 'Tidal Music'},
+    { icon: <Image src="/images/pandora.svg" alt="Shazam" width={50} height={50} />, alt: 'Pandora Music'},
+    { icon: <Image src="/images/beatport.svg" alt="Shazam" width={50} height={50} />, alt: 'Beatport Music'},
+    { icon: <Image src="/images/groove.svg" alt="Shazam" width={50} height={50} />, alt: 'Groove Music'},
+    { icon: <Image src="/images/yandex.svg" alt="Shazam" width={50} height={50} />, alt: 'Yandex Music'},
+    { icon: <Image src="/images/resso.svg" alt="Shazam" width={50} height={50} />, alt: 'Resso Music'},
+    { icon: <Image src="/images/peleton.svg" alt="Shazam" width={35} height={35} />, alt: 'Peleton Music'},
+    { icon: <Image src="/images/tunedglobal.png" alt="Shazam" width={220} height={220} />, alt: 'Tuned Global'},
+    { icon: <Image src="/images/vevo.png" alt="Shazam" width={170} height={170} />, alt: 'Vevo TV Music'},
+    { icon: <Image src="/images/kkbox.png" alt="Shazam" width={130} height={130} />, alt: ''},
   ];
 
   return (
@@ -169,10 +209,10 @@ export default function ProblemSection() {
         </button>
       </Link>
 
-      {/* Modal for showing more platforms using FaIcons */}
+      {/* Modal for showing more platforms using FaIcons and custom icons */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-          <div className="relative bg-black p-8 rounded-md shadow-lg max-w-3xl mx-auto text-white">
+          <div className="relative bg-black p-8 rounded-md shadow-lg max-w-3xl mx-auto text-white border border-white"> {/* Added white border */}
             <button
               className="absolute top-2 right-4 text-2xl"
               onClick={() => setShowModal(false)}
@@ -182,8 +222,15 @@ export default function ProblemSection() {
             <h3 className="text-2xl font-semibold mb-6">We Distribute your Music on all the platforms Listed below!</h3>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
               {moreIcons.map((iconObj, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <div className="text-5xl text-gray-400">{iconObj.icon}</div>
+                <div
+                  key={index}
+                  className="flex flex-col items-center transition-transform duration-300 hover:scale-125"
+                  onMouseEnter={() => setHoveredModalIcon(iconObj.alt)}
+                  onMouseLeave={() => setHoveredModalIcon(null)}
+                >
+                  <div className={`text-5xl ${hoveredModalIcon === iconObj.alt ? 'text-white' : 'text-gray-400 opacity-40'}`}>
+                    {iconObj.icon}
+                  </div>
                   <p className="mt-2 text-sm">{iconObj.alt}</p>
                 </div>
               ))}
@@ -194,3 +241,5 @@ export default function ProblemSection() {
     </div>
   );
 }
+
+

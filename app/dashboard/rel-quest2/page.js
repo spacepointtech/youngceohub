@@ -6,17 +6,9 @@ import Link from 'next/link';
 import '@/app/style.css';
 
 export default function CreateRelease() {
-  const [releaseType, setReleaseType] = useState('');
-  const [showOtherInput, setShowOtherInput] = useState(false);
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [license, setLicense] = useState('');
-
-  const handleReleaseTypeChange = (e) => {
-    const value = e.target.value;
-    setReleaseType(value);
-    setShowOtherInput(value === 'Others');
-  };
 
   const handleDateChange = (e) => {
     setSelectedDate(e.target.value);
@@ -257,6 +249,3 @@ export default function CreateRelease() {
     </div>
   );
 }
-
-
-

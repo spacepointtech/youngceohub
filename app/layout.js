@@ -13,7 +13,8 @@ export default function Layout({ children }) {
   || pathname === '/dashboard/question5' || pathname === '/dashboard/question6' 
   || pathname === '/dashboard/question4' || pathname==='/dashboard/rel-quest'
   || pathname==='/dashboard/rel-quest1' || pathname==='/dashboard/rel-quest2'
-  || pathname==='/dashboard/rel-quest3' || pathname==='/dashboard/submission';
+  || pathname==='/dashboard/rel-quest3' || pathname==='/dashboard/submission'
+  || pathname==='/dashboard/settings';
 
   return (
     <html lang="en">
