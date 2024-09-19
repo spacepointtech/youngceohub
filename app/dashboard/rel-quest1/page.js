@@ -92,7 +92,7 @@ export default function CreateRelease() {
       {/* Main Content */}
       <div className="w-full flex flex-col items-center justify-center">
         {/* Header */}
-        <header className="bg-black text-white py-4 px-8 flex justify-end items-center space-x-6 border-b border-white w-full mt-52">
+        <header className="bg-black text-white py-4 px-8 flex justify-end items-center space-x-6 border-b border-white w-full mt-36">
           <div className="relative">
             <FaBell className="text-gray-400 cursor-pointer" />
             <span className="absolute top-0 right-0 bg-red-500 text-xs rounded-full w-2 h-2"></span>
@@ -122,20 +122,20 @@ export default function CreateRelease() {
 
           {/* Key Details container box */}
           <div className="bg-[#1A1A1A] border border-[#262626] p-6 rounded-lg flex items-start relative">
+            
             {/* Back Button */}
             <FaAngleLeft
               className="absolute top-4 left-4 cursor-pointer text-white"
               onClick={() => window.history.back()}
             />
-
             {/* Background Image */}
             <Image
               src="/images/C2.png"
               alt="Key Details Illustration"
               objectFit="cover"
-              className="absolute opacity-70 top-8"
-              width={370}
-              height={150}
+              className="absolute opacity-70 left-0 top-6"
+              width={352}
+              height={250}
             />
 
             <div className="w-1/2 relative z-10 ml-auto mr-8">
@@ -184,9 +184,7 @@ export default function CreateRelease() {
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
                   />
-                  <p className="text-xs text-gray-400 mt-2 opacity-60">
-                    List all contributors and their roles, ensuring accuracy.
-                  </p>
+                  
                 </div>
 
                 <div className="flex items-center space-x-2">
@@ -207,7 +205,9 @@ export default function CreateRelease() {
                     <FaPlus className="text-black" />
                   </div>
                 </div>
-
+                <p className="text-xs text-gray-400 mt-2 opacity-60">
+                    List all contributors and their roles, ensuring accuracy.
+                  </p>
                 {/* List of Contributors */}
                 {contributors.length > 0 && (
                   <div className="mt-4 space-y-4">
@@ -222,6 +222,16 @@ export default function CreateRelease() {
 
                 <button className="mt-4 bg-white text-black py-2 px-4 rounded">Add Artists</button>
 
+               {/* Submit and Cancel Buttons */}
+              <div className="mt-6 flex justify-center items-center">
+                <Link href='/dashboard'>
+                  <button className="border border-[#A6A6A6] text-white py-2 px-4 rounded mr-4">Cancel</button>
+                </Link>
+
+                <Link href='/dashboard/rel-quest2'>
+                  <button className="bg-white text-black py-2 px-4 rounded">Next</button>
+                </Link>
+              </div>
               </div>
             </div>
           </div>

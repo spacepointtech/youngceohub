@@ -8,22 +8,21 @@ import '@/app/style.css';
 
 export default function CreateRelease() {
   const [trackFile, setTrackFile] = useState(null);
-  const [catalogFile, setCatalogFile] = useState(null);
-  const [coverFile, setCoverFile] = useState(null);
   const [trackFileName, setTrackFileName] = useState('');
+  const [catalogFile, setCatalogFile] = useState(null);
   const [catalogFileName, setCatalogFileName] = useState('');
+  const [coverFile, setCoverFile] = useState(null);
   const [coverFileName, setCoverFileName] = useState('');
 
   const handleFileUpload = (e, setFile, setFileName, allowedTypes) => {
     const file = e.target.files[0];
     if (file && allowedTypes.includes(file.type)) {
       setFile(file);
-      setFileName(file.name); // Set the file name
+      setFileName(file.name); // Sets the file name
     } else {
       alert('Invalid file type. Please upload a valid file.');
     }
   };
-
   return (
     <div className="flex h-screen bg-black font-poppins overflow-auto">
       {/* Sidebar */}
@@ -127,7 +126,7 @@ export default function CreateRelease() {
               className="absolute top-4 left-4 cursor-pointer text-white"
               onClick={() => window.history.back()}
             />
-            <p className="text-white text-xl text-center mb-4 mt-2">Genre & Credits Details</p>
+            <p className="text-white text-xl text-center mb-4 mt-2">Upload Your Artistic Data</p>
             {/* Progress Bar */}
             <div className=" bg-gray-700 rounded-full h-2 mb-8 ml-auto">
               <div className="bg-white h-2 rounded-full" style={{ width: '100%' }}></div>
@@ -137,60 +136,66 @@ export default function CreateRelease() {
               {/* Add Tracks from Computer */}
               <div className="space-y-4 mb-8">
                 <label className="text-white block mb-2 mt-3">Add Tracks from Computer</label>
-                <div className="flex space-x-4">
-                  <label className="w-full p-3 flex items-center justify-center border border-white text-white rounded h-12 cursor-pointer relative">
+                <div className="flex justify-between space-x-4">
+                  <label className="w-2/3 p-3 flex items-center justify-between border border-white text-black rounded h-12 cursor-pointer relative bg-[#CDCDCD]">
                     <input
                       type="file"
                       className="absolute inset-0 opacity-0 cursor-pointer"
                       onChange={(e) => handleFileUpload(e, setTrackFile, setTrackFileName, ['audio/wav'])}
                     />
-                    <FaCloudUploadAlt className="text-4xl mr-2" />
-                    <span>{trackFileName || 'Upload From Computer'}</span>
+                    <span>{trackFileName || 'Upload From Computer'}</span>  
+                    <FaCloudUploadAlt className="text-3xl" />
                   </label>
                 </div>
               </div>
-
-              {/* Add from Catalog */}
+               
+                {/* Add from Catalog */}
               <div className="space-y-4 mb-8">
                 <label className="text-white block mb-2">Add from Catalog</label>
-                <div className="flex space-x-4">
-                  <label className="w-full p-3 flex items-center justify-center border border-white text-white rounded h-12 cursor-pointer relative">
+                <div className="flex justify-between space-x-4">
+                  <label className="w-2/3 p-3 flex items-center justify-between border border-white text-black rounded h-12 cursor-pointer relative bg-[#CDCDCD]">
                     <input
                       type="file"
                       className="absolute inset-0 opacity-0 cursor-pointer"
                       onChange={(e) => handleFileUpload(e, setCatalogFile, setCatalogFileName, ['audio/wav'])}
                     />
-                    <FaCloudUploadAlt className="text-4xl mr-2" />
-                    <span>{catalogFileName || 'Upload from Catalog'}</span>
+                    <span>{catalogFileName || 'Upload from Catalog'}</span> 
+                    <FaCloudUploadAlt className="text-3xl" />
                   </label>
                 </div>
               </div>
 
-             {/* Upload Cover Photo */}
-             <div className="flex space-x-6">
-                <div className="w-1/2">
-                  <label className="text-white block mb-2">Upload Cover Photo</label>
 
-                  {/* Upload Box */}
-                  <label className="w-full p-3 flex items-center justify-center border-2 border-white border-dashed text-white rounded h-44 cursor-pointer relative">
-                    <input
-                      type="file"
-                      className="absolute inset-0 opacity-0 cursor-pointer"
-                      onChange={(e) => handleFileUpload(e, setCoverFile, setCoverFileName, ['image/png', 'image/jpeg', 'image/jpg'])}
-                    />
-                    <FaCloudUploadAlt className="text-4xl mr-2" />
-                    <span>{coverFileName || 'Upload Cover Photo'}</span>
-                  </label>
-                </div>
-                
-                 
-                <div className="w-1/2 text-xs text-gray-400 opacity-70 mt-10">
-                <h5 className="text-xs text-white mb-2 font-semibold">Cover Art Requirement:</h5>
-                  <p className="text-xs text-gray-400 mb-4">Size: 300X300PX</p>
-                  <p className="text-xs text-gray-400 mb-4">Format: JPG, JPEG or PNG</p>
-                  <p>Ensure you own the rights to all artwork elements. Information must match release metadata. Stores reject blurry, low-quality images or those with URLs, contact info, barcodes, prices, or logos. No explicit content. Non-compliant artwork will be rejected.</p>
-                </div>
-              </div>
+                {/* Upload Cover Photo */}
+<div className="flex space-x-6">
+  <div className="w-1/2">
+    <label className="text-white block mb-2">Upload Cover Photo</label>
+
+    {/* Upload Box */}
+    <label className="w-full p-3 flex flex-col items-center justify-center border-2 border-white border-dashed text-white rounded h-44 cursor-pointer relative">
+      <input
+        type="file"
+        className="absolute inset-0 opacity-0 cursor-pointer"
+        onChange={(e) => handleFileUpload(e, setCoverFile, setCoverFileName, ['image/png', 'image/jpeg', 'image/jpg'])}
+      />
+      <div className="flex flex-col items-center">
+        <FaCloudUploadAlt className="text-4xl mb-2" />
+        <span>{coverFileName || 'Drag and Drop your cover art'}</span>
+      </div>
+    </label>
+  </div>
+
+  <div className="w-1/2 text-xs text-gray-400 opacity-70 mt-10">
+    <h5 className="text-xs text-white mb-2 font-semibold">Cover Art Requirement:</h5>
+    <p className="text-xs text-gray-400 mb-4">Size: 300X300PX</p>
+    <p className="text-xs text-gray-400 mb-4">Format: JPG, JPEG or PNG</p>
+    <p>Ensure you own the rights to all artwork elements. Information must match release metadata. Stores reject blurry, low-quality images or those with URLs, contact info, barcodes, prices, or logos. No explicit content. Non-compliant artwork will be rejected.</p>
+  </div>
+</div>
+
+                      {/* <div>
+                           Will integrate this to add Permission of Remixes 
+                      </div> */}
 
               {/* Submit and Cancel Buttons */}
               <div className="mt-6 flex justify-center items-center">
