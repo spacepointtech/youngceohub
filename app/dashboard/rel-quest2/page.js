@@ -9,6 +9,9 @@ export default function CreateRelease() {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [license, setLicense] = useState('');
+  const [showIndependentTooltip, setShowIndependentTooltip] = useState(false);
+  const [showCreativeTooltip, setShowCreativeTooltip] = useState(false);
+  const [ccType, setCcType] = useState(''); // New state for CC dropdown
 
   const handleDateChange = (e) => {
     setSelectedDate(e.target.value);
@@ -17,9 +20,12 @@ export default function CreateRelease() {
   const handleTimeChange = (e) => {
     setSelectedTime(e.target.value);
   };
-
+  
   const handleLicenseChange = (e) => {
     setLicense(e.target.value);
+    if (e.target.value !== 'Creative Commons') {
+      setCcType(''); // Reset CC type if not Creative Commons
+    }
   };
 
   return (
@@ -60,19 +66,19 @@ export default function CreateRelease() {
           {/* Menu */}
           <nav className="mt-4">
             <ul className="space-y-4 text-center">
-              <li className="p-2 rounded-r-lg flex justify-normal items-center">
-                <FaMusic className="mr-3 justify-end" /> Music
+              <li className="p-2 rounded-r-lg flex justify-center items-center">
+                <FaMusic className="mr-3 justify-cennter" /> Music
               </li>
-              <li className="p-2 rounded-r-lg flex justify-normal items-center">
-                <FaUsers className="mr-3" /> Audience
+              <li className="p-2 rounded-r-lg flex justify-center items-center">
+                <FaUsers className="mr-3 justify-center" /> Audience
               </li>
-              <li className="p-2 rounded-r-lg flex justify-normal items-center">
+              <li className="p-2 rounded-r-lg flex justify-center  items-center">
                 <FaTshirt className="mr-3" /> Merch
               </li>
-              <li className="p-2 rounded-r-lg flex justify-normal items-center">
+              <li className="p-2 rounded-r-lg flex justify-center  items-center">
                 <FaVideo className="mr-3" /> Video & Visuals
               </li>
-              <li className="p-2 rounded-r-lg flex justify-normal items-center">
+              <li className="p-2 rounded-r-lg flex justify-center  items-center">
                 <FaCog className="mr-3" /> Settings
               </li>
             </ul>
@@ -165,43 +171,75 @@ export default function CreateRelease() {
               Release Date: {selectedDate}, Time: {selectedTime}
             </p>
           )}
+                 {/* License Type */}
+                 <div className="mt-4">
+                  <p className="text-white block mb-2">Select the License Type<span className="text-red-500">*</span></p>
+                  <div className="border rounded-lg flex items-center justify-center p-2">
+                    <div
+                      className={`flex-1 flex items-center justify-center cursor-pointer p-4 ${license === 'Copyright' ? 'bg-white text-black' : 'bg-transparent text-white'}`}
+                      onMouseEnter={() => setShowIndependentTooltip(true)}
+                      onMouseLeave={() => setShowIndependentTooltip(false)}
+                    >
+                      <input
+                        type="radio"
+                        value="Copyright"
+                        className="mr-2 h-5 w-5 appearance-none border-2 border-white rounded-full checked:bg-black checked:border-white focus:outline-none"
+                        checked={license === 'Copyright'}
+                        onChange={handleLicenseChange}
+                      />
+                      <label htmlFor="independent">Independent artist</label>
+                      {showIndependentTooltip && !license && (
+                        <div className="absolute left-0 mt-28 bg-gray-700 text-white text-xs p-2 rounded-md z-10">
+                          A solo artist not signed to a label.
+                        </div>
+                      )}
+                    </div>
+                    
+                    <div
+                      className={`flex-1 flex items-center justify-center cursor-pointer p-4 ${license === 'Creative Commons' ? 'bg-white text-black' : 'bg-transparent text-white'}`}
+                      onMouseEnter={() => setShowCreativeTooltip(true)}
+                      onMouseLeave={() => setShowCreativeTooltip(false)}
+                    >
+                      <input
+                        type="radio"
+                        value="Creative Commons"
+                        className="mr-2 h-5 w-5 appearance-none border-2 border-white rounded-full checked:bg-black checked:border-white focus:outline-none"
+                        onChange={handleLicenseChange}
+                        checked={license === 'Creative Commons'} 
+                      />
+                      <label htmlFor="label">Creative Commons</label>
+                      {showCreativeTooltip && !license && (
+                        <div className="absolute right-0 mt-28 bg-gray-700 text-white text-xs p-2 rounded-md z-10">
+                          A Creative Commons license is a standard way for a copyright holder to grant others permission to use their work under certain conditions.
+                        </div>
+                      )}
+                    </div>
+                  </div>
 
-        
-            {/* License Type */}
-<div className="mt-4">
-  <p className="text-white block mb-2">Select the License Type<span className="text-red-500">*</span></p>
-  <div className="border rounded-lg flex items-center justify-center p-2">
-    <div
-      className={`flex-1 flex items-center justify-center cursor-pointer p-4 ${license === 'Copyright' ? 'bg-white text-black' : 'bg-transparent text-white'}`}
-    >
-      <input
-        type="radio"
-        value="Copyright"
-        className="mr-2 h-5 w-5 appearance-none border-2 border-white rounded-full checked:bg-black checked:border-white focus:outline-none"
-        checked={license === 'Copyright'}
-        onChange={handleLicenseChange}
-      />
-      <label htmlFor="independent">Independent artist</label>
-    </div>
-    
-    <div
-      className={`flex-1 flex items-center justify-center cursor-pointer p-4 ${license === 'Creative Commons' ? 'bg-white text-black' : 'bg-transparent text-white'}`}
-    >
-      <input
-        type="radio"
-        value="Creative Commons"
-        className="mr-2 h-5 w-5 appearance-none border-2 border-white rounded-full checked:bg-black checked:border-white focus:outline-none"
-        onChange={handleLicenseChange}
-        checked={license === 'Creative Commons'} 
-      />
-      <label htmlFor="label">Creative Commons</label>
-    </div>
-  </div>
+                  <p className="text-gray-400 text-xs">
+                    Select the applicable license: Copyright or Creative Commons (choose the CC type)
+                  </p>
 
-  <p className="text-gray-400 text-xs">
-    Select the applicable license: Copyright or Creative Commons (choose the CC type)
-  </p>
-</div>
+                  {/* Creative Commons Type Dropdown */}
+                  {license === 'Creative Commons' && (
+                    <div className="mt-4">
+                      <label className="text-white block mb-2">Select Creative Commons Type</label>
+                      <select
+                        className="w-full p-3 rounded bg-[#CDCDCD] text-black"
+                        value={ccType}
+                        onChange={(e) => setCcType(e.target.value)}
+                      >
+                        <option value="">Choose CC Type</option>
+                        <option value="Attribution">Attribution (CC BY)</option>
+                        <option value="Attribution-ShareAlike">Attribution-ShareAlike (CC BY-SA)</option>
+                        <option value="Attribution-NoDerivs">Attribution-NoDerivs (CC BY-ND)</option>
+                        <option value="Attribution-NonCommercial">Attribution-NonCommercial (CC BY-NC)</option>
+                        <option value="Attribution-NonCommercial-ShareAlike">Attribution-NonCommercial-ShareAlike (CC BY-NC-SA)</option>
+                        <option value="Attribution-NonCommercial-NoDerivs">Attribution-NonCommercial-NoDerivs (CC BY-NC-ND)</option>
+                      </select>
+                    </div>
+                  )}
+                </div>
 
             
 
