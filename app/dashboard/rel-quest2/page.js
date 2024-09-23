@@ -187,10 +187,10 @@ export default function CreateRelease() {
                         checked={license === 'Copyright'}
                         onChange={handleLicenseChange}
                       />
-                      <label htmlFor="independent">Independent artist</label>
+                      <label htmlFor="independent">Copyright</label>
                       {showIndependentTooltip && !license && (
                         <div className="absolute left-0 mt-28 bg-gray-700 text-white text-xs p-2 rounded-md z-10">
-                          A solo artist not signed to a label.
+                          Copyright (or author's right) is a legal term used to describe the rights that creators have over their literary and artistic works. Works covered by copyright range from books, music, paintings, sculpture, and films, to computer programs, databases, advertisements, maps, and technical drawings.
                         </div>
                       )}
                     </div>

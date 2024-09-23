@@ -44,7 +44,7 @@ export default function CreateRelease() {
                   </div>
                   <span className="text-xs text-gray-600 ml-2">20%</span>
                 </div>
-                <Link href="/login/dashboard/question1">
+                <Link href="/dashboard/question1">
                   <p className="text-xs mt-2 py-1 text-center border border-white rounded-lg text-white leading-none" style={{ fontSize: '10px' }}>
                     Complete your profile
                   </p>
@@ -147,6 +147,8 @@ export default function CreateRelease() {
                     <FaCloudUploadAlt className="text-3xl" />
                   </label>
                 </div>
+                <p className="text-xs text-white opacity-75 mt-2">The tracks will be uploaded from your computer.</p>
+
               </div>
                
                 {/* Add from Catalog */}
@@ -163,6 +165,7 @@ export default function CreateRelease() {
                     <FaCloudUploadAlt className="text-3xl" />
                   </label>
                 </div>
+                <p className="text-xs text-white opacity-75 mt-2">The tracks will be uploaded from your catalog.</p>
               </div>
 
 
